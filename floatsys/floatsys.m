@@ -16,14 +16,22 @@
 %       in base 'a'.
 %
 %
-%    nums=important_numbers(a=a,kminus=kminus)
+%    nums=important_numbers(a=a,kminus=kminus,kplus=kplus,t=t)
 %       For a given `a,kminus,kplus,t` it returns some important numbers of the
 %       system represented by 'a,kminus,kplus,t'
 %
 %
-%    e=expand(x=x,a=a,d=d)
+%    e=expand_dec(x=x,a=a,d=d)
 %       It returns the 'a'-ary (e.g. binary for a=2) expansion of 'x' for 'd'
 %       digits, it works only for 0<x<1.
+%       note that, x should be given in decimal notation
+%
+%
+%    !!!not implemented yet
+%    e=expand_rat(A=A,B=B,a=a,d=d)
+%       It returns the 'a'-ary (e.g. binary for a=2) expansion of 'A/B' for 'd'
+%       digits, it works only for 0<A/B<1.
+%       x should be given in decimal notation
 %
 %    r=represent(x=x, a=a, kminus=kminus, kplus=kplus, t=t)
 %       Returns the representation of 'x' in the system 'a,kminus,kplus,t'
@@ -75,8 +83,7 @@ function d=digits(args)
 end
 
 
-% For a given `myfs` it returns some important numbers of the
-% system represented by 'myfs'
+% For a given system `a,kminus,kplus,t` it returns some important numbers
 function nums=important_numbers(args)
    arguments
       args.a=2
@@ -111,7 +118,8 @@ end
 
 % It returns the 'a'-ary (aka. binary for a=2) expansion of 'x' for 'd' digits
 % after the dot. 'e': vector of digits. it works for 0<x<1
-function xpn=expand(args)
+% x should be given in decimal notation
+function xpn=expand_dec(args)
    arguments
       args.x = 1/3
       args.a = 2

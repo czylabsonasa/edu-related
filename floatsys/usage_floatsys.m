@@ -19,12 +19,12 @@ fs.digits(x=100, a=2);
 disp("100 in base 3:")
 fs.digits(x=100, a=3);
 
-% compute the first 10 digits (after the dot) of 1/7 in {a=2,kminus=-4,kplus=4,t=6}
-disp("1/7 first 10 digits in base 2:")
-fs.expand(x=1/7,a=2,d=10);
+% compute the first 10 digits (after the dot) of 0.321 in {a=2,kminus=-4,kplus=4,t=6}
+disp("0.321: first 10 digits in base 2:")
+fs.expand_dec(x=,a=2,d=10);
 
-disp("1/7 first 10 digits in base 3:")
-fs.expand(x=1/7,a=3,d=10);
+disp("0.321 first 10 digits in base 3:")
+fs.expand_dec(x=321,a=3,d=10);
 
 
 % represent x=1/7 in {a=2,kminus=-4,kplus=4,t=6}
