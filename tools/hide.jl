@@ -36,7 +36,7 @@ usage: julia hide.jl pathtofile PASS
       pp_as_uint8=vcat(pp_as_uint8, p_as_uint8[1:r])
    end
    
-   println(length(f_as_uint8), " ", length(pp_as_uint8))
+#   println(length(f_as_uint8), " ", length(pp_as_uint8))
 
    ff_as_uint8=xor.(f_as_uint8,pp_as_uint8)
 
