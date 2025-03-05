@@ -16,3 +16,6 @@
   - O(n) approach expected
 - https://open.kattis.com/problems/zipline
   - ternary search or other simple optimization method
+- https://open.kattis.com/problems/euclideantsp
+  - ternary, nothing to do with the true tsp...
+  - in case of using interval based methods: how to choose the initial interval?
