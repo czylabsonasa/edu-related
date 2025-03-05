@@ -14,3 +14,5 @@
 ### kind of optimization
 - https://www.interviewbit.com/problems/best-time-to-buy-and-sell-stocks-i/
   - O(n) approach expected
+- https://open.kattis.com/problems/zipline
+  - ternary search or other simple optimization method
