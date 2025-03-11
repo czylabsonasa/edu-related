@@ -25,7 +25,7 @@ Info:
 ## compare loop and vect
 - the vectorized version is 9-10 times faster (can be optimized further)
 
-- minifel_loop.m
+#### minifel_loop.m
 
 Local minimum possible.
 
@@ -36,7 +36,7 @@ the value of the step size tolerance.
 Elapsed time is 1.273433 seconds.
 
 
-- minifel_vect.m
+#### minifel_vect.m
 
 Local minimum possible.
 
