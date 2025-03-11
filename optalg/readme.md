@@ -26,6 +26,7 @@ Info:
 - the vectorized version is 9-10 times faster (can be optimized further)
 
 - minifel_loop.m
+
 Local minimum possible.
 
 fminunc stopped because the size of the current step is less than
@@ -36,6 +37,7 @@ Elapsed time is 1.273433 seconds.
 
 
 - minifel_vect.m
+
 Local minimum possible.
 
 fminunc stopped because the size of the current step is less than
