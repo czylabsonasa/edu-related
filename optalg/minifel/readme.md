@@ -22,8 +22,8 @@ Info:
   Client: Cinnamon v: 6.4.7 inxi: 3.3.26
 
 
-## compare loop and vect
-- the vectorized version is 9-10 times faster (can be optimized further)
+## compare loop and vect for minifel (szappan)
+- the vectorized version is 5-6-7 times faster
 
 #### minifel_loop.m
 
@@ -45,4 +45,3 @@ the value of the step size tolerance.
 
 <stopping criteria details>
 Elapsed time is 0.181904 seconds.
-

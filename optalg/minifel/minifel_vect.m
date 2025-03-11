@@ -49,24 +49,25 @@ function obj=mkobj(Wh,Wd,Wv,ZZ)
      Wd(:,:,3)=ZZ(1:end-1,1:end-1)-ZZ(2:end,2:end);
      Wv(:,:,3)=ZZ(1:end-1,1:end-1)-ZZ(2:end,1:end-1);
      % some dot() computed more than once, u may try to precompute them...
+     % look at the elementwise operations
+     % the dot here returns a matrix...
      y=sum(sqrt(dot(Wh,Wh,3).*dot(Wd,Wd,3)-dot(Wh,Wd,3).^2)+...
         sqrt(dot(Wd,Wd,3).*dot(Wv,Wv,3)-dot(Wd,Wv,3).^2),"all");
    end
    obj=@obj0;
 end
 
-
-function obj=mkobj_opt(Wh,Wd,Wv,ZZ)
+% spare some opertions: no effect
+function obj=mkobj2(Wh,Wd,Wv,ZZ)
    function y=obj0(P)
      ZZ(2:end-1,2:end-1)=P;
      ZZ0=ZZ(1:end-1,1:end-1);
      Wh(:,:,3)=ZZ0-ZZ(1:end-1,2:end);
      Wd(:,:,3)=ZZ0-ZZ(2:end,2:end);
      Wv(:,:,3)=ZZ0-ZZ(2:end,1:end-1);
-     % some dot() computed more than once, u may try to precompute them...
      dd=dot(Wd,Wd,3);
-     y=sum(sqrt(dot(Wh,Wh,3)*dd-dot(Wh,Wd,3)^2)+...
-        sqrt(dd*dot(Wv,Wv,3)-dot(Wd,Wv,3)^2),"all");
+     y=sum(sqrt(dot(Wh,Wh,3).*dd-dot(Wh,Wd,3).^2)+...
+        sqrt(dd.*dot(Wv,Wv,3)-dot(Wd,Wv,3).^2),"all");
    end
    obj=@obj0;
 end
