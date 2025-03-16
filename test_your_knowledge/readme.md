@@ -3,9 +3,11 @@
 - matlab is NOT the best tool to solve (=the boot is on the wrong leg)
 - use your favourite language
 
-### floating point systems
+### floating point systems/computations
 - https://open.kattis.com/problems/cantor
   - ternary expansion, identify period
+- https://open.kattis.com/problems/mortgage
+  - careful analysis of the cases
 
 ### solving linear systems
 - https://open.kattis.com/problems/equationsolver
