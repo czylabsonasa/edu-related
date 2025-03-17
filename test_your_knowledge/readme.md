@@ -8,6 +8,8 @@
   - ternary expansion, identify period
 - https://open.kattis.com/problems/mortgage
   - careful analysis of the cases
+- https://open.kattis.com/problems/triangle
+  - how get the number of decimal digits in the integer part?
 
 ### solving linear systems
 - https://open.kattis.com/problems/equationsolver
