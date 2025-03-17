@@ -11,11 +11,12 @@
 - https://open.kattis.com/problems/triangle
   - how get the number of decimal digits in the integer part?
 
-### solving linear systems
+### matrix/vector/solving linear systems
 - https://open.kattis.com/problems/equationsolver
-- https://www.spoj.com/problems/MIFF/
+- https://www.spoj.com/problems/MIFF
+- https://open.kattis.com/problems/matrix
 
-### kind of optimization
+### kinda optimization
 - https://www.interviewbit.com/problems/best-time-to-buy-and-sell-stocks-i/
   - O(n) approach expected
 - https://open.kattis.com/problems/zipline
