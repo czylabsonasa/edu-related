@@ -23,3 +23,5 @@
 - https://open.kattis.com/problems/euclideantsp
   - ternary, nothing to do with the true tsp...
   - in case of using interval based methods: how to choose the initial interval?
+- https://open.kattis.com/problems/curvyblocks
+  - minimal calculus knowledge + careful implementation
