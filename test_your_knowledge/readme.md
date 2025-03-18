@@ -3,8 +3,11 @@
 - matlab is NOT the best tool to solve (=the boot is on the wrong leg)
 - use your favourite language
 
+### what is `(X)`?
+- the `(X)` sign next to a problem means that it is not available for extra points
+
 ### floating point systems/computations
-- https://open.kattis.com/problems/cantor
+- https://open.kattis.com/problems/cantor `(X)`
   - ternary expansion, identify period
 - https://open.kattis.com/problems/mortgage
   - careful analysis of the cases
