@@ -19,7 +19,7 @@
 - https://www.spoj.com/problems/MIFF
 - https://open.kattis.com/problems/matrix
 
-### kinda optimization
+### kinda optimization/searching for extremal values/locations
 - https://www.interviewbit.com/problems/best-time-to-buy-and-sell-stocks-i/
   - O(n) approach expected
 - https://open.kattis.com/problems/zipline
