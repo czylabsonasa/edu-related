@@ -29,3 +29,6 @@
   - in case of using interval based methods: how to choose the initial interval?
 - https://open.kattis.com/problems/curvyblocks
   - minimal calculus knowledge + careful implementation
+- https://open.kattis.com/problems/pizza
+  - discrete,weighted version of the Fermat-Weber problem
+  - unimodal
