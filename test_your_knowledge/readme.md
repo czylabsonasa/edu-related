@@ -33,7 +33,7 @@
   - discrete,weighted version of the Fermat-Weber problem
   - unimodal
 - https://open.kattis.com/problems/starnotatree
-  - a method similar to the "gradient descent" but without the gradient will do the job 
+  - an approach similar to the "gradient descent" but without the gradient will do the job 
 
 
 
