@@ -2,7 +2,7 @@
 % against spline w/ random data
 
 for test=1:99
-   % for two points we do not have inner points so it 
+   % for two points we do not have inner points so spline
    % is a plain hermite interpolation
    numofpoints=2;
    t=sort(randsample(-20:20,numofpoints,false));
