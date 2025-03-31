@@ -21,6 +21,6 @@ for test=1:99
    FF(end,2)=fp1;
    [p,t]=hermite(tt,mm,FF);
    yyher=hornervect(p,t,xx);
-   fprintf("test %d. -> naverage difference in polinom values: %.9f\n",...
+   fprintf("test %d. -> average difference in polinom values: %.9f\n",...
       test,sum(abs(yysp-yyher))/length(xx));
 end
