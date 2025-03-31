@@ -4,20 +4,20 @@
 - use your favourite language
 
 ### what is `(X)`?
-- the `(X)` sign next to a problem means that it is not available for extra points
+- the `(X)` sign next to a problem means that it is **not** available for extra points
 
 ### floating point systems/computations
-- https://open.kattis.com/problems/cantor `(X)`
+- https://open.kattis.com/problems/cantor   `(X)`
   - ternary expansion, identify period
 - https://open.kattis.com/problems/mortgage
   - careful analysis of the cases
-- https://open.kattis.com/problems/triangle
+- https://open.kattis.com/problems/triangle  `(X)`
   - how get the number of decimal digits in the integer part?
 
 ### matrix/vector/solving linear systems
 - https://open.kattis.com/problems/equationsolver
-- https://www.spoj.com/problems/MIFF
-- https://open.kattis.com/problems/matrix
+- https://www.spoj.com/problems/MIFF   `(X)`
+- https://open.kattis.com/problems/matrix   `(X)`
 
 ### kinda optimization/searching for extremal values/locations
 - https://www.interviewbit.com/problems/best-time-to-buy-and-sell-stocks-i/
