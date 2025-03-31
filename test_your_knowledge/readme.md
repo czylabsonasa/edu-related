@@ -35,5 +35,7 @@
 - https://open.kattis.com/problems/starnotatree
   - an approach similar to the "gradient descent" but without the gradient will do the job 
 
-
+### polynomials
+- https://open.kattis.com/problems/ada
+  - kind of polynomial interpolation but can be done without constructing the polynomial
 
