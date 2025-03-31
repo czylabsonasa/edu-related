@@ -4,7 +4,7 @@
 - use your favourite language
 
 ### what is `(X)`?
-- the `(X)` sign next to a problem means that it is **not** available for extra points
+- the `(X)` sign next to a problem means that it is **NOT** available for extra points
 
 ### floating point systems/computations
 - https://open.kattis.com/problems/cantor   `(X)`
