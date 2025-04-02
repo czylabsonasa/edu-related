@@ -13,14 +13,14 @@
 function [p,t]=hermite(tt,mm,FF)
    t2row=repelem(1:length(tt),mm);
    t=repelem(tt,mm);
-   R=sum(mm);
-   F=zeros(R,R);
+   C=sum(mm);
+   F=zeros(C,C); % C instead of R (compute columnwise)
     
    % F will be filled in columnwise
    F(:,1)=repelem(FF(:,1),mm);
 
-   for j=2:R
-       for i=1:R-j+1
+   for j=2:C
+       for i=1:C-j+1
            if not(t(i)==t(i+j-1))
                F(i,j)=(F(i,j-1)-F(i+1,j-1))/(t(i)-t(i+j-1));
            else
@@ -32,6 +32,6 @@ function [p,t]=hermite(tt,mm,FF)
    % debug:
    % [t(:),F]
    p=F(1,:);
-   p=p(R:-1:1);
-   t=t(R:-1:1);
+   p=p(C:-1:1);
+   t=t(C:-1:1);
 end

@@ -16,17 +16,27 @@ x0=[-1.2;1];
 Z=fxy(X,Y);
 
 
-subplot(2,1,1);hold on;
+subplot(3,1,1);hold on;
 contour(X,Y,Z,33);
-[h,s]=newton_sima(f,df,H,x0);
-s
+[h,sima]=newton_sima(f,df,H,x0);
+sima
 plot(x0(1),x0(2),"Or");
 plot(h(1,:),h(2,:),"k*-");
+title("sima newton");
 
-subplot(2,1,2);hold on;
+subplot(3,1,2);hold on;
 contour(X,Y,Z,33);
-[h,s]=newton_dfp(f,df,x0);
-s
+[h,dfp]=newton_dfp(f,df,x0);
+dfp
 plot(x0(1),x0(2),"Or");
 plot(h(1,:),h(2,:),"k*-");
+title("newton dfp");
+
+subplot(3,1,3);hold on;
+contour(X,Y,Z,33);
+[h,bfgs]=newton_bfgs(f,df,x0);
+bfgs
+plot(x0(1),x0(2),"Or");
+plot(h(1,:),h(2,:),"k*-");
+title("newton bfgs");
 

@@ -6,7 +6,7 @@ function [history,status]=newton_sima(f,df,H,x0)
    df0=df(x0);
    history=[x0];
 
-   for it=1:33
+   for it=1:2*22
       p=H0\(-df0);
       if norm(p)<1e-8, status="xtol";break;end
       x0=x0+p;
