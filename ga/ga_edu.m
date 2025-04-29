@@ -1,6 +1,6 @@
-% ga0 all in one
+% ga all in one
 
-function ga_01_edu()
+function ga_edu()
    [obj,n,opt]=mkobj()
    fprintf("optimum==%d\n",opt);
 
