@@ -1,24 +1,35 @@
 pause on;
 
-f = @(x,y) (x-3.14).^2+(y-2.72).^2+sin(3*x+1.41)+sin(4*y-1.73);
-LO=0;UP=6;
+% f = @(x,y) (x-3.14).^2+(y-2.72).^2+sin(3*x+1.41)+sin(4*y-1.73);
+% LO=0;UP=6;
 
 % f=@(x,y) 100*(y-x.^2).^2+(1-x).^2;
 % LO=-3;UP=3;
 
+% f=@(x,y) 2*x.^2-1.05*x.^4+1/6*x.^6+x.*y+y.^2;
+% LO=-3;UP=3;
+
+f=@(x,y) -abs(sin(x).*cos(y).*...
+   exp(abs(1-sqrt(x.^2+y.^2)/pi)));
+LO=-10;UP=10;
+
+
 fv = @(v) f(v(1),v(2));
 
-xx=linspace(LO,UP);
+xx=linspace(LO,UP,200);
 [XX,YY]=meshgrid(xx,xx);
 ZZ=f(XX,YY);
 
-S=30;
+S=100;
 pos=LO+(UP-LO)*rand(2,S);
 velo=2*rand(2,S)-1; 
 
-contour(XX,YY,ZZ);
+hold on;
+contour(XX,YY,ZZ,33);
 hold on;
 plot(pos(1,:),pos(2,:),"*");
+drawnow;
+
 
 gg_best_val=Inf;
 gg_best_pos=[Inf;Inf];
@@ -36,10 +47,10 @@ for s=1:S
 end
 
 W=0.8;
-P=0.4;
-G=0.2;
+P=0.5;
+G=0.5;
 GG=0.1;
-N=2;
+N=10;
 maxit=22*2*2;
 for it=1:maxit
    for s=1:S
@@ -50,11 +61,15 @@ for it=1:maxit
          P*rand()*(p_best_pos(:,s)-apos)+...
          G*rand()*(p_best_pos(:,I(i))-apos)+...
          GG*rand()*(gg_best_pos-apos);
-      pos(:,s)=apos+velo(:,s);
+      apos=apos+velo(:,s);
+      apos=max([LO;LO],apos);
+      apos=min([UP;UP],apos);
+      pos(:,s)=apos;
+
    end
    
    hold off;
-   contour(XX,YY,ZZ);
+   contour(XX,YY,ZZ,33);
    hold on;
    plot(pos(1,:),pos(2,:),"*");
    drawnow;
@@ -71,7 +86,7 @@ for it=1:maxit
          end
       end
    end
-   pause(0.1);
+   pause(0.01);
 end
 gg_best_pos
 gg_best_val
