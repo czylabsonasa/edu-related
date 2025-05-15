@@ -12,23 +12,22 @@ function Ebest=pre_tsp(inst)
    norm_fact=1000*max(dist(:));
    dist=dist/norm_fact;
 
-   maxit=10000;
-   NL=16;
-   T=10^5;
-   nmove=32;
+   maxit=1000;
+   NL=10;
+   T=10^3;
 
-   coolit=@(t,s) 0.99*t;
+   coolit=@(t,s) 0.97*t;
    %coolit=@(t,i) 1/(i+1)^1.3;
 
-
    %init
-   rng(2222);
    x=randperm(N);
    Ex=E(x);
    Ebest=Ex;
    xbest=x;
+   nmove=4;
 
    function tsp(x,Ex,run_name)
+      clf;
       it=1;
       while T>0 && it<maxit
          tEbest=Ebest;
@@ -62,20 +61,47 @@ function Ebest=pre_tsp(inst)
    tsp(x,Ex,"első");
    
    Ebest
-   % x=xbest;
-   % Ex=Ebest;
-   % T=10^3;
-   % NL=2*32;
-   % nmove=2*32;
-   % tsp(x,Ex,"második");
+   x=xbest;
+   Ex=Ebest;
+   T=10^4;
+   NL=16;
+   nmove=32;
+   tsp(x,Ex,"második");
    
+   x=xbest;
+   Ex=Ebest;
+   T=10^4;
+   NL=16;
+   nmove=32;
+   tsp(x,Ex,"harmadik");
+
+
 
    Ebest=norm_fact*Ebest;
-
+   % 
+   % function X=move(X)
+   %    I=randi(N,1,2);
+   %    X(I) = X([I(2), I(1)]);
+   % end
+   % 
    function X=move(X)
-      I=randi(N,1,2);
-      X(I) = X([I(2), I(1)]);
+      if rand()<0.7
+         I=randi(N,1,2);
+         X(I) = X([I(2), I(1)]);
+      else
+         while true
+            I=randi(N,1,2);
+            if I(1)>I(2)
+               I=I([2,1]);
+            end
+            if I(2)-I(1)>3
+               break;
+            end
+         end
+         X([I(1),I(1)+1,I(2)-1,I(2)])=X([I(2),I(2)-1,I(1)+1,I(1)]);
+      end
    end
+
 
    function [Xb,EXb]=move_n(X,n)
       Xb=zeros(size(X));
