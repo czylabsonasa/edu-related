@@ -1,0 +1,1 @@
+- observe the effect of "symmetrization" to the steps of the gradient method
