@@ -22,7 +22,7 @@
 ### kinda optimization/searching for extremal values/locations
 - https://www.interviewbit.com/problems/best-time-to-buy-and-sell-stocks-i/
   - O(n) approach expected
-- https://open.kattis.com/problems/zipline
+- https://open.kattis.com/problems/zipline   `(X)`
   - ternary search or other simple optimization method
 - https://open.kattis.com/problems/euclideantsp
   - ternary, nothing to do with the true tsp...
@@ -36,6 +36,6 @@
   - an approach similar to the "gradient descent" but without the gradient will do the job 
 
 ### polynomials
-- https://open.kattis.com/problems/ada
+- https://open.kattis.com/problems/ada   `(X)`
   - kind of polynomial interpolation but can be done without constructing the polynomial
 
