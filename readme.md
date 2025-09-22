@@ -14,7 +14,7 @@
 - [die sum](_diesum/readme.md)
 - [random queen](_randomqueen/readme.md)
 - [restricted permutations](_restricted_perm/readme.md)
-- [mandala](_mandala/readme.md) transforming objects w/ complex numbers
+- [mandala](_mandala/readme.md)
 
 
 #### problemsolving in general

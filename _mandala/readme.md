@@ -1,4 +1,5 @@
 ### mandala
+- an example of transforming objects w/ complex numbers
 
 ```matlab
 clc;clear;clf;
