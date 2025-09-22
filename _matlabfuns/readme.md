@@ -1,8 +1,7 @@
 ### useful/important matlab functions
 
-- rand
-  - uniform on [0,1]
-- randi(n)
+- [rand()](_rand/readme.md)
+- randi(n,...)
   - unifrom on 1:n
   - no way to control replacement
 - randperm(n)
