@@ -9,6 +9,7 @@
 
 #### helper programs
 - [floating point systems](_floatsys/readme.md)
+- [lu decomposition](_mlu/readme.md)
 
 #### "advanced" topics
 - [die sum](_diesum/readme.md)
