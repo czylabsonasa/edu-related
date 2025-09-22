@@ -4,7 +4,7 @@
 - [matlab functions](_matlabfuns/readme.md)
 
 #### snippets
-- computing and plotting [nth-roots](_nthroots/readme.md)
+- [nth-root](_nthroots/readme.md) computation
 
 
 #### helper programs
