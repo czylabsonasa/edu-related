@@ -5,7 +5,7 @@
 
 #### snippets
 - [nth-root](_nthroots/readme.md) computation
-- [sum of two dice](_simulation-sumdice/simsumdice.m) simulation
+- [sum of two dice](_simulation-sumdice/readme.md) simulation
 
 #### helper programs
 - [floating point systems](_floatsys/readme.md)
