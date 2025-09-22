@@ -1,9 +1,7 @@
 ### useful/important matlab functions
 
 - [rand()](_rand/readme.md)
-- randi(n,...)
-  - unifrom on 1:n
-  - no way to control replacement
+- [randi(n,...)](_randi/readme.md)
 - randperm(n)
   - permutation of 1:n
 - randsample
@@ -20,4 +18,5 @@
 - stem, bar
 - hist (it also returns count and bin, deprecated)
 - histcount + histogram (edge -> left closed-right open intervals , except the last one)
+
 
