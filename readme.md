@@ -1,5 +1,7 @@
 ### education related codes/links/information
 
+- [matlab functions](_matlabfuns/readme.md)
+
 #### app-math/num-math/math4engineers related matlab codes
 - [floating point systems](_floatsys/readme.md)
 - [die sum](_diesum/readme.md)
