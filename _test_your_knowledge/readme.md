@@ -1,28 +1,26 @@
 ### about
-- some applied/numerical-math related tasks from various online-judges 
+- some applied/numerical-math/app-stat/prob-stat related tasks from various online-judges 
 - matlab is NOT the best tool to solve (=the boot is on the wrong leg)
 - use your favourite language
 
-### what is `(X)`?
-- the `(X)` sign next to a problem means that it is **NOT** available for extra points
 
 ### floating point systems/computations
-- https://open.kattis.com/problems/cantor   `(X)`
+- https://open.kattis.com/problems/cantor   
   - ternary expansion, identify period
 - https://open.kattis.com/problems/mortgage
   - careful analysis of the cases
-- https://open.kattis.com/problems/triangle  `(X)`
+- https://open.kattis.com/problems/triangle  
   - how get the number of decimal digits in the integer part?
 
 ### matrix/vector/solving linear systems
 - https://open.kattis.com/problems/equationsolver
-- https://www.spoj.com/problems/MIFF   `(X)`
-- https://open.kattis.com/problems/matrix   `(X)`
+- https://www.spoj.com/problems/MIFF   
+- https://open.kattis.com/problems/matrix   
 
 ### kinda optimization/searching for extremal values/locations
 - https://www.interviewbit.com/problems/best-time-to-buy-and-sell-stocks-i/
   - O(n) approach expected
-- https://open.kattis.com/problems/zipline   `(X)`
+- https://open.kattis.com/problems/zipline   
   - ternary search or other simple optimization method
 - https://open.kattis.com/problems/euclideantsp
   - ternary, nothing to do with the true tsp...
@@ -36,6 +34,16 @@
   - an approach similar to the "gradient descent" but without the gradient will do the job 
 
 ### polynomials
-- https://open.kattis.com/problems/ada   `(X)`
+- https://open.kattis.com/problems/ada
   - kind of polynomial interpolation but can be done without constructing the polynomial
 
+### combinatorics/probability
+- https://open.kattis.com/problems/bobby
+- https://open.kattis.com/problems/perica
+- https://open.kattis.com/problems/dicegame
+- https://open.kattis.com/problems/dicebetting
+- https://open.kattis.com/problems/odds
+- https://open.kattis.com/problems/secretsanta
+- https://open.kattis.com/problems/orchard
+- https://open.kattis.com/problems/ratings
+- https://open.kattis.com/problems/anthony
