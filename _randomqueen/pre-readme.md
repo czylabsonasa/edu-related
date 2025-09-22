@@ -6,4 +6,4 @@
 {{randomqueen.m}}
 
 
-!()[randomqueen.png]
+![](randomqueen.png)

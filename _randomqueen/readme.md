@@ -42,4 +42,4 @@ imagesc(T);
 
 
 
-!()[randomqueen.png]
+![](randomqueen.png)
