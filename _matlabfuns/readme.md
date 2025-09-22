@@ -1,9 +1,8 @@
 ### useful/important matlab functions
 
 - [rand()](_rand/readme.md)
-- [randi(n,...)](_randi/readme.md)
-- randperm(n)
-  - permutation of 1:n
+- [randi(imax,...)](_randi/readme.md)
+- [randperm(n)](_randperm/readme.md)
 - randsample
   - randi analogue w/ more control
   - integers, 3rd param is about the replacement: true/false, **not** a key/value pair
