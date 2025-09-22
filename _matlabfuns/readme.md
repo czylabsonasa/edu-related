@@ -4,8 +4,7 @@
 - [randi(n,...)](_randi/readme.md)
 - [randperm(n,...)](_randperm/readme.md)
 - [randsample(n,k,...)](_randsample/readme.md)
-- datasample 
-  - for collections,  "replace"  + true/false (default is true)
+- [datasample(pop,n,"replace",...)](_datasample/readme.md)
 - prod (analogue of sum)
 - factorial
 - nchoosek (combnk is deprecated)
