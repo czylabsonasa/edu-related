@@ -1,6 +1,6 @@
 ### useful/important matlab functions
 
--  rand
+- rand
   - uniform on [0,1]
 - randi(n)
   - unifrom on 1:n

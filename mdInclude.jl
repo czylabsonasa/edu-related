@@ -27,8 +27,18 @@ module mdInclude
 
    function getPair(m::RegexMatch,folder)
       _DBG_&&printstyled("getPair!\n";color=:green)
-      fname="""$(m["name"]).$(m["ext"])"""
-      source=read(joinpath(folder,fname),String)
+      ext=m["ext"]
+      if get(ext2lang,ext,"")==""
+         printstyled("unknown extension: $(ext)"; color=:red)
+         return
+      end
+      fname="""$(m["name"]).$(ext)"""
+      tar=joinpath(folder,fname)
+      if !isfile(tar)
+         printstyled("no such file: $(tar)"; color=:red)
+         return
+      end
+      source=read(tar,String)
       _DBG_&&println(stderr,source[1:33])
       return """$(m.match)"""=>frameIt(source,m["ext"])
    end
@@ -38,10 +48,11 @@ module mdInclude
       for (folder,dirs,files) in walkdir(dir)
          for fi in files
             aFi=abspath(joinpath(folder,fi))
-            if basename(aFi)=="preReadme.md"
+            basFi=basename(aFi)
+            if startswith(basFi,"pre-") && endswith(basFi,".md")
                _DBG_&&printstyled("\n-> $(aFi)\n";color=:yellow)
                dFi=dirname(aFi)
-               aTar=joinpath(dFi,"readme.md")
+               aTar=joinpath(dFi,basFi[5:end])
                if !isfile(aTar) || mtime(aFi)>mtime(aTar)
                   printstyled("   processing\n"; color=:lightyellow)
                   From=read(aFi,String)

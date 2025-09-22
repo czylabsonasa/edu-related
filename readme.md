@@ -10,7 +10,7 @@
 #### helper programs
 - [floating point systems](_floatsys/readme.md)
 
-### "advanced" topics
+#### "advanced" topics
 - [die sum](_diesum/readme.md)
 - [random queen](_randomqueen/readme.md)
 
