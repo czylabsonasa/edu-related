@@ -33,3 +33,5 @@ title(sprintf("N=%d",N))
 ```
 
 
+
+![](nthroots.png)

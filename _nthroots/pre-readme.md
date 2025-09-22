@@ -4,3 +4,6 @@
 
 
 {{nthroots.m}}
+
+
+![](nthroots.png)
