@@ -1,6 +1,6 @@
 # mdInclude.jl
 # a quick hack in the morning of 2025 09 22 
-# make readme.md from preReadme.md
+# make stg.md from pre-stg.md by including what is defined to be included
 # TODO: 
 # - extend the lang support 
 # - the error handling is deficient
@@ -86,5 +86,4 @@ if abspath(PROGRAM_FILE)==@__FILE__
       dir=ARGS[1]
    end
    Include(dir)
- end
-
+end
