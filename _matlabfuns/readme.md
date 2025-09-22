@@ -1,12 +1,9 @@
 ### useful/important matlab functions
 
 - [rand()](_rand/readme.md)
-- [randi(imax,...)](_randi/readme.md)
-- [randperm(n)](_randperm/readme.md)
-- randsample
-  - randi analogue w/ more control
-  - integers, 3rd param is about the replacement: true/false, **not** a key/value pair
-  - default is false (w/o replacement)
+- [randi(n,...)](_randi/readme.md)
+- [randperm(n,...)](_randperm/readme.md)
+- [randsample(n,k,...)](_randsample/readme.md)
 - datasample 
   - for collections,  "replace"  + true/false (default is true)
 - prod (analogue of sum)
