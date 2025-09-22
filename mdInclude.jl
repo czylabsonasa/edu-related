@@ -39,7 +39,7 @@ module mdInclude
          for fi in files
             aFi=abspath(joinpath(folder,fi))
             if basename(aFi)=="preReadme.md"
-               _DBG_&&printstyled("-> $(aFi)\n";color=:yellow)
+               _DBG_&&printstyled("\n-> $(aFi)\n";color=:yellow)
                dFi=dirname(aFi)
                aTar=joinpath(dFi,"readme.md")
                if !isfile(aTar) || mtime(aFi)>mtime(aTar)
