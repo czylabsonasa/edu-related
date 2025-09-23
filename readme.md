@@ -1,7 +1,10 @@
 ### education related codes/links/information
 
 - for app-math/num-math/math4engineers subjects
-- [matlab functions](_matlabfuns/readme.md)
+- [matlab builtin functions](_matlabfuns/readme.md)
+- [user defined function](_matlabfuns/_custom/readme.md)
+- [simple user defined functions](_matlabfuns/_simple/readme.md)
+
 
 #### snippets
 - [nth-root](_nthroots/readme.md) computation
