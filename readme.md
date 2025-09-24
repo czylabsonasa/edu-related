@@ -19,6 +19,9 @@
 - [random queen](_randomqueen/readme.md)
 - [restricted permutations](_restricted_perm/readme.md)
 - [mandala](_mandala/readme.md)
+- [random-walk](_drunkenwalk/readme.md)
+
+
 
 
 #### problemsolving in general
