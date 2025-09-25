@@ -11,6 +11,7 @@
 - [sum of two dice](_simulation-sumdice/readme.md) simulation
 
 #### helper programs
+- [learn/exercise to add fractions](_addfractions/readme.md)
 - [floating point systems](_floatsys/readme.md)
 - [lu decomposition](_mlu/readme.md)
 
