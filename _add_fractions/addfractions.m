@@ -37,12 +37,15 @@ function addfractions()
       uResp=strip(input(pr,"s"));
       %class(uResp)
       if length(uResp)==0
-         break
+         break;
       end
-      try
-         ab=sscanf(uResp,"%d/%d");
-      catch
-         fprintf("malformed answer\n");
+      
+      numAll=numAll+1; % -> malformed
+
+      ab=sscanf(uResp,"%d/%d");
+      if length(ab)<1
+         fprintf("malformed answer.\n");
+         input("hit ↵ to continue");
          %break;
          continue;
       end
@@ -70,7 +73,6 @@ function addfractions()
             fprintf(sprintf("no, it is %d\n",okA));
          end
       end
-      numAll=numAll+1;
       input("hit ↵ to continue");
    end
    
