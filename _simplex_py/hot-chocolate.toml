@@ -1,0 +1,16 @@
+[required]
+nCond=3
+nVar=5
+varNames="1 2 3 4 5"
+obj="10 2 0 0 0"
+inVar="3 4 5"
+outVar="1 2"
+table="""
+1 2 40
+5 1 56
+1 0 10
+"""
+[optional]
+title="hot-chocolate"
+optVal="112"
+optLoc="10 6 0 0 0"
