@@ -28,7 +28,7 @@ module mdInclude
    function getPair(m::RegexMatch,folder)
       _DBG_&&printstyled("getPair!\n";color=:green)
       ext=m["ext"]
-      if get(ext2lang,ext,"")==""
+      if get(ext2lang,ext,"matlab")==""
          printstyled("unknown extension: $(ext)"; color=:red)
          return
       end

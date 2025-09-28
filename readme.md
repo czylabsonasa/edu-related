@@ -14,6 +14,7 @@
 - [learn/exercise to add fractions](_add_fractions/readme.md)
 - [floating point systems](_floatsys/readme.md)
 - [lu decomposition](_mlu/readme.md)
+- [simplex table computations](_simplex_m/readme.md)
 
 #### "advanced" topics
 - [die sum](_diesum/readme.md)
