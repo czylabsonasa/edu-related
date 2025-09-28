@@ -10,6 +10,6 @@
 
 
 #### sample session
-{{usage.m}}
+{{session.m}}
 
 

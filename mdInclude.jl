@@ -19,7 +19,7 @@ module mdInclude
    function frameIt(s,ext)
       _DBG_&&printstyled("frameIt!\n";color=:green)
       """
-      ```$(ext2lang[ext])
+      ```$(get(ext2lang,ext,"matlab"))
       $(s)
       ```
       """
