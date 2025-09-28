@@ -1,9 +1,12 @@
 ### simplex table computations
 - simplex tables w/o hand computations, but you should decide the swaps.
-- hand-made: [rationals](FracUtil2.m), [printing](StrUtil.m) and 
-[tabular collection of vectors](VecTab.m).
+- the rationals used are based on int64. (different from the builtin rat/rats).
+- hand-made: representing [rationals](FracUtil2.m), reading,printing the [corresponding string forms](StrUtil.m) and 
+storing them in an appropriate [collection](VecTab.m).
+- no classes, only the subfunction feature used (as in python,julia,D).
 - you should set up the initial table
-- TODO: more test
+- not well tested
+  - TODO: perform more tests
 
 
 #### sample data file
