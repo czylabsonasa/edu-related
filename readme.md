@@ -23,6 +23,9 @@
 - [mandala](_mandala/readme.md)
 - [random-walk](_drunkenwalk/readme.md)
 
+#### benchmark
+- [loop vs vectorized](_bench_1/readme.md)
+
 
 
 
