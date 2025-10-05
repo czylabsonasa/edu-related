@@ -4,6 +4,7 @@
 # TODO: 
 # - extend the lang support 
 # - the error handling is deficient
+# continued in myInclude
 
 module mdInclude
    const _DBG_=true
@@ -66,10 +67,10 @@ module mdInclude
                   end
                end
             end
-            for adir in dirs
-               if startswith(adir,"_")
-                  Include(adir) # finalize was here
-               end
+         end
+         for adir in dirs
+            if startswith(adir,"_")
+               Include(adir) # finalize was here
             end
          end
       end

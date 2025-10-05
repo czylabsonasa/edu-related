@@ -4,6 +4,8 @@
 # TODO: 
 # - extend the lang support 
 # - the error handling is deficient
+# github markdown does not play well with detail/summary + source code
+# github -> no pdf embedding
 
 module mdInclude
    const _DBG_=true
@@ -32,24 +34,14 @@ module mdInclude
          """
       elseif ext=="pdf"
          """
-         <object data="$(name).pdf" type="application/pdf" width="95%" height="700px">
-         <embed src="$(name).pdf">
-         <p>Unable to embed: <a href="$(name).pdf">download</a>.</p>
-         </object>
+         [$(desc)]($(name).pdf)
          """
       end
-      """
-      <details>
-      $(desc)
-      <summary>
-      $(body)
-      </summary>
-      </details>
-      """
+      body
    end
 
    function getSubPair(m::RegexMatch,folder)
-      _DBG_&&printstyled("getPair!\n";color=:green)
+      _DBG_&&printstyled("getSubPair!\n";color=:green)
       desc,name,ext=m["desc"],m["name"],m["ext"]
       _DBG_&&println(stderr,"$(desc) $(name) $(ext)")
       if !(ext in knownExt)
