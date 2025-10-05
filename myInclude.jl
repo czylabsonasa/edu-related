@@ -14,38 +14,61 @@ module mdInclude
       "py"=>"python",
       "cc"=>"c++",
    )
-   const patt=Regex(raw"{{(?<name>\w+).(?<ext>\w+)}}")
+   langKeys=collect(keys(ext2lang))
+   knownExt=vcat(langKeys,["pdf"])
+   
+   # the substitution pattern
+   const patt=Regex(raw"{{(?<desc>[^@]+)@(?<name>[^\.]+).(?<ext>\w+)}}")
 
-   function frameIt(s,ext)
+   function frameIt(desc,name,ext,path)
       _DBG_&&printstyled("frameIt!\n";color=:green)
+      body=if ext in langKeys
+         src=read(path,String)
+         _DBG_&&println(stderr,src[1:33])
+         """
+         ```$(ext2lang[ext])
+         $(src)
+         ```
+         """
+      elseif ext=="pdf"
+         """
+         <object data="$(name).pdf" type="application/pdf" width="95%" height="700px">
+         <embed src="$(name).pdf">
+         <p>Unable to embed: <a href="$(name).pdf">download</a>.</p>
+         </object>
+         """
+      end
       """
-      ```$(get(ext2lang,ext,"matlab"))
-      $(s)
-      ```
+      <details>
+      $(desc)
+      <summary>
+      $(body)
+      </summary>
+      </details>
       """
    end
 
-   function getPair(m::RegexMatch,folder)
+   function getSubPair(m::RegexMatch,folder)
       _DBG_&&printstyled("getPair!\n";color=:green)
-      ext=m["ext"]
-      if get(ext2lang,ext,"matlab")==""
+      desc,name,ext=m["desc"],m["name"],m["ext"]
+      _DBG_&&println(stderr,"$(desc) $(name) $(ext)")
+      if !(ext in knownExt)
          printstyled("unknown extension: $(ext)"; color=:red)
          return
       end
-      fname="""$(m["name"]).$(ext)"""
-      tar=joinpath(folder,fname)
-      if !isfile(tar)
-         printstyled("no such file: $(tar)"; color=:red)
+      fname="""$(name).$(ext)"""
+      path=joinpath(folder,fname)
+      if !isfile(path)
+         printstyled("no such file: $(path)"; color=:red)
          return
       end
-      source=read(tar,String)
-      _DBG_&&println(stderr,source[1:33])
-      return """$(m.match)"""=>frameIt(source,m["ext"])
+      return """$(m.match)"""=>frameIt(desc,name,ext,path)
    end
 
    function Include(dir)
-      _DBG_&&printstyled("Include!\n";color=:green)
+      _DBG_&&printstyled("Include: dir=$(dir)\n";color=:green)
       for (folder,dirs,files) in walkdir(dir)
+         false&&_DBG_&&println(stderr,"folder=$(folder)\n dirs=$(dirs)\n files=$(files)\n")
          for fi in files
             aFi=abspath(joinpath(folder,fi))
             basFi=basename(aFi)
@@ -58,18 +81,18 @@ module mdInclude
                   From=read(aFi,String)
                   subs=[]
                   for m in eachmatch(patt,From)
-                     push!(subs,getPair(m,folder))
-                     _DBG_&&println(stderr,m)
+                     push!(subs,getSubPair(m,folder))
+                     _DBG_&&println(stderr,"match: $(m)")
                   end
                   open(aTar,"w") do f
                      println(f,replace(From,subs...))
                   end
                end
             end
-            for adir in dirs
-               if startswith(adir,"_")
-                  Include(adir) # finalize was here
-               end
+         end
+         for adir in dirs
+            if startswith(adir,"_")
+               Include(adir)
             end
          end
       end

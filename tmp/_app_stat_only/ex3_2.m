@@ -1,21 +1,3 @@
-### lab-3
-
-<details>
-lab slides
-<summary>
-<object data="3-Bayes.pdf" type="application/pdf" width="95%" height="700px">
-<embed src="3-Bayes.pdf">
-<p>Unable to embed: <a href="3-Bayes.pdf">download</a>.</p>
-</object>
-
-</summary>
-</details>
-
-
-<details>
-Exercise 5.4
-<summary>
-```matlab
 % exercise 3.2
 
 clc; clear; clf;
@@ -42,10 +24,3 @@ yticks(yt);
 text(N,p_hand,"  p="+strip(string(rats(p_hand))));
 legend(["simulation", "theoretical"],"Location","northeastoutside");
 title("exercise 3.2 two dice\n the first > second");
-
-```
-
-</summary>
-</details>
-
-
