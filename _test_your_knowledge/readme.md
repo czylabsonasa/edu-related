@@ -47,3 +47,4 @@
 - https://open.kattis.com/problems/orchard
 - https://open.kattis.com/problems/ratings
 - https://open.kattis.com/problems/anthony
+- https://open.kattis.com/problems/hahysi
