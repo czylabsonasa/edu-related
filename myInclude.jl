@@ -7,7 +7,7 @@
 # github markdown does not play well with detail/summary + source code
 # github -> no pdf embedding
 
-module mdInclude
+module myInclude
    const _DBG_=true
 
    ext2lang=Dict(
@@ -16,26 +16,35 @@ module mdInclude
       "py"=>"python",
       "cc"=>"c++",
    )
-   langKeys=collect(keys(ext2lang))
-   knownExt=vcat(langKeys,["pdf"])
+   langExt=collect(keys(ext2lang))
+   docExt=["pdf"]
+   picExt=["png","gif","jpg"]
+   knownExt=vcat(langExt,docExt,picExt)
    
    # the substitution pattern
    const patt=Regex(raw"{{(?<desc>[^@]+)@(?<name>[^\.]+).(?<ext>\w+)}}")
 
    function frameIt(desc,name,ext,path)
       _DBG_&&printstyled("frameIt!\n";color=:green)
-      body=if ext in langKeys
+      body=if ext in langExt
          src=read(path,String)
          _DBG_&&println(stderr,src[1:33])
          """
+         - $(desc)
          ```$(ext2lang[ext])
          $(src)
          ```
          """
-      elseif ext=="pdf"
+      elseif ext in docExt
          """
-         [$(desc)]($(name).pdf)
+         [$(desc)]($(name).$(ext))
          """
+      elseif ext in picExt
+         """
+         ![$(desc)]($(name).$(ext))
+         """
+      else
+         @assert 1<1 "unknown extension"
       end
       body
    end
@@ -93,7 +102,7 @@ module mdInclude
    export Include
 end
 
-using .mdInclude
+using .myInclude
 
 if abspath(PROGRAM_FILE)==@__FILE__
    dir="."

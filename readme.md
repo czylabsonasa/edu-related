@@ -27,7 +27,8 @@
 - [loop vs vectorized](_bench_1/readme.md)
 
 
-
-
 #### problemsolving in general
 - [kattis](_test_your_knowledge/readme.md)
+
+#### labors
+- [app-stat](_app_stat_lab/readme.md)

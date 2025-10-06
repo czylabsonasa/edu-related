@@ -3,6 +3,7 @@
 [lab slides](3-Bayes.pdf)
 
 
+- Exercise 5.4
 ```matlab
 % exercise 3.2
 
