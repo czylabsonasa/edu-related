@@ -30,7 +30,7 @@ module myInclude
          src=read(path,String)
          _DBG_&&println(stderr,src[1:33])
          """
-         - $(desc)
+         #### $(desc)
          ```$(ext2lang[ext])
          $(src)
          ```

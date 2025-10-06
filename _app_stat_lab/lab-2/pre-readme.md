@@ -10,5 +10,5 @@
 
 {{exercise 3.14, colored balls@ex3_14.m}}
 
-{{exercise 3.14, lottery, hit>=3@ex3_17.m}}
+{{exercise 3.17, lottery, hit>=3@ex3_17.m}}
 

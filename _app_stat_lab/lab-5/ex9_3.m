@@ -1,10 +1,3 @@
-### lab-5
-
-- [the slides](5-General-Rv.pdf)
-
-
-#### is it a cdf?
-```matlab
 clc;clear;clf;
 
 % is it a cdf?
@@ -44,7 +37,3 @@ axis padded;
 
 
 % b) (x-1)/(x+1) if x>=1, otherwise 0
-
-```
-
-
