@@ -2,26 +2,14 @@ clc;clear;clf;
 
 % 
 % by hand approach: we know the cdf everything can be computed
-% at least by calling appropriate functions
+% at least by calling appropriate functions, here: normcdf
 
 
-% by-hand (theoretical)
-figure(1);
-xx=linspace(-3,3);
-f=@(x) ?
-F=@(x) ?
-yy=f(xx);
-plot(xx,yy);
-title(sprintf("exact - P=%.4f",));
-axis padded;
+% only "by-hand" computations, but w/o standardization
 
-
-
-% by-simulation
-figure(2);
-N=100000;
-RV=?;
-ecdf(RV);
-K=?;
-title(sprintf("ecdf - P=%.4f",K/N));
-axis padded;
+% below: P(X<-50)=F(-50):
+below=normcdf(-50,20,50)
+% above: P(X>50)=1-P(X<=50)=1-P(X<50)=1-F(50):
+above=1-normcdf(50,20,50)
+% above+inside+below=Omega:
+inside=1-(above+below)

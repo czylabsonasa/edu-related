@@ -3,7 +3,7 @@
 - [the slides](5-General-Rv.pdf)
 
 
-#### is it a cdf?
+#### is it a cdf? - 9.3
 ```matlab
 clc;clear;clf;
 
@@ -36,7 +36,7 @@ axis padded;
 ```
 
 
-#### what is the cdf? (geometric prob.)
+#### what is the cdf? - 9.5 (geometric prob.)
 ```matlab
 clc;clear;clf;
 
@@ -70,13 +70,15 @@ axis padded;
 ```
 
 
-#### what is the cdf again? (geometric prob).
+#### what is the cdf again? - 10.1 (geometric prob).
 ```matlab
 clc;clear;clf;
 
 % 
 % by hand approach: knowing the cdf means that you also know the pdf
-% sieve formula, P(min(x,y)<d)=P(x<d + y<d)=P(x<d)+P(y<d)-P(x<d*y<d)
+% P(A+B)=P(A)+P(B)-P(AB) sieve formula
+% P(min(x,2-x)<d)=P(x<d + 2-x<d)=P(x<d)+P(2-x<d)-P(x<d*y<d)=
+% d/2 + d/2 - 0 (why?), for 0<d<1
 % getting the pdf: take the derivative
 % 
 % 
@@ -85,7 +87,7 @@ clc;clear;clf;
 % plot the obtained cdf
 figure(1);
 xx=linspace(0,2);
-F=@(x) x/2+x/2-(x/2).*(x/2);
+F=@(x) x/2+x/2;
 yy=F(xx);
 subplot(2,1,1);
 plot(xx,yy,"b");
@@ -93,15 +95,12 @@ title(sprintf("exact: %.4f",F(3/4)-F(1/2)));
 axis padded;
 
 subplot(2,1,2);
-f=@(x)1-x/2;
+% f=@(x) 1; % this does not work for vectors...
+f=@(x) ones(size(x)); % this way is ok
 yy=f(xx);
 plot(xx,yy,"b");
 title(sprintf("pdf"));
 axis padded;
-
-
-
-
 
 
 % by-simulation
@@ -109,11 +108,16 @@ figure(2);
 N=100000;
 x=2*rand(1,N);
 y=2*rand(1,N);
-RV=min(x,y);
+RV=min(x,2-x);
+subplot(2,1,1);
 ecdf(RV);
-K=sum(RV>1/2 & RV<3/4);
-title(sprintf("ecdf: %.4f",K/N));
+title(sprintf("ecdf"));
 axis padded;
+subplot(2,1,2);
+hist(RV); % it's deprecated, but works
+title(sprintf("empirical-pdf=histogram"));
+axis padded;
+
 ```
 
 
@@ -148,39 +152,28 @@ axis padded;
 ```
 
 
-#### normal distribution
+#### normal distribution - 13.5
 ```matlab
 clc;clear;clf;
 
 % 
 % by hand approach: we know the cdf everything can be computed
-% at least by calling appropriate functions
+% at least by calling appropriate functions, here: normcdf
 
 
-% by-hand (theoretical)
-figure(1);
-xx=linspace(-3,3);
-f=@(x) ?
-F=@(x) ?
-yy=f(xx);
-plot(xx,yy);
-title(sprintf("exact - P=%.4f",));
-axis padded;
+% only "by-hand" computations, but w/o standardization
 
+% below: P(X<-50)=F(-50):
+below=normcdf(-50,20,50)
+% above: P(X>50)=1-P(X<=50)=1-P(X<50)=1-F(50):
+above=1-normcdf(50,20,50)
+% above+inside+below=Omega:
+inside=1-(above+below)
 
-
-% by-simulation
-figure(2);
-N=100000;
-RV=?;
-ecdf(RV);
-K=?;
-title(sprintf("ecdf - P=%.4f",K/N));
-axis padded;
 ```
 
 
-#### discrete rv, properties
+#### discrete rv, properties - 15.4
 ```matlab
 clc;clear;clf;
 
