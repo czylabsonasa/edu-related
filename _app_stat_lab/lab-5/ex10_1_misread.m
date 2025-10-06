@@ -2,9 +2,7 @@ clc;clear;clf;
 
 % 
 % by hand approach: knowing the cdf means that you also know the pdf
-% P(A+B)=P(A)+P(B)-P(AB) sieve formula
-% P(min(x,2-x)<d)=P(x<d + 2-x<d)=P(x<d)+P(2-x<d)-P(x<d*y<d)=
-% d/2 + d/2 - 0 (why?), for 0<d<1
+% sieve formula, P(min(x,y)<d)=P(x<d + y<d)=P(x<d)+P(y<d)-P(x<d*y<d)
 % getting the pdf: take the derivative
 % 
 % 
@@ -13,7 +11,7 @@ clc;clear;clf;
 % plot the obtained cdf
 figure(1);
 xx=linspace(0,2);
-F=@(x) x/2+x/2;
+F=@(x) x/2+x/2-(x/2).*(x/2);
 yy=F(xx);
 subplot(2,1,1);
 plot(xx,yy,"b");
@@ -21,12 +19,15 @@ title(sprintf("exact: %.4f",F(3/4)-F(1/2)));
 axis padded;
 
 subplot(2,1,2);
-% f=@(x) 1; % this does not work for vectors...
-f=@(x) ones(size(x)); % this way is ok
+f=@(x)1-x/2;
 yy=f(xx);
 plot(xx,yy,"b");
 title(sprintf("pdf"));
 axis padded;
+
+
+
+
 
 
 % by-simulation
@@ -34,12 +35,8 @@ figure(2);
 N=100000;
 x=2*rand(1,N);
 y=2*rand(1,N);
-RV=min(x,2-x);
-subplot(2,1,1);
+RV=min(x,y);
 ecdf(RV);
-title(sprintf("ecdf"));
-axis padded;
-subplot(2,1,2);
-hist(RV); % it's deprecated, but works
-title(sprintf("empirical-pdf=histogram"));
+K=sum(RV>1/2 & RV<3/4);
+title(sprintf("ecdf: %.4f",K/N));
 axis padded;
