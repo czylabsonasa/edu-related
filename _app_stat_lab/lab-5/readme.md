@@ -36,7 +36,7 @@ axis padded;
 ```
 
 
-#### what is the cdf,geometric prob.
+#### what is the cdf? (geometric prob.)
 ```matlab
 clc;clear;clf;
 
@@ -68,5 +68,151 @@ ecdf(RV);
 title(sprintf("simulation: %.4f",K/N));
 axis padded;
 ```
+
+
+#### what is the cdf again? (geometric prob).
+```matlab
+clc;clear;clf;
+
+% 
+% by hand approach: knowing the cdf means that you also know the pdf
+% sieve formula, P(min(x,y)<d)=P(x<d + y<d)=P(x<d)+P(y<d)-P(x<d*y<d)
+% getting the pdf: take the derivative
+% 
+% 
+
+
+% plot the obtained cdf
+figure(1);
+xx=linspace(0,2);
+F=@(x) x/2+x/2-(x/2).*(x/2);
+yy=F(xx);
+subplot(2,1,1);
+plot(xx,yy,"b");
+title(sprintf("exact: %.4f",F(3/4)-F(1/2)));
+axis padded;
+
+subplot(2,1,2);
+f=@(x)1-x/2;
+yy=f(xx);
+plot(xx,yy,"b");
+title(sprintf("pdf"));
+axis padded;
+
+
+
+
+
+
+% by-simulation
+figure(2);
+N=100000;
+x=2*rand(1,N);
+y=2*rand(1,N);
+RV=min(x,y);
+ecdf(RV);
+K=sum(RV>1/2 & RV<3/4);
+title(sprintf("ecdf: %.4f",K/N));
+axis padded;
+```
+
+
+#### uniform distribution
+```matlab
+clc;clear;clf;
+
+% 
+% by hand approach: we know the cdf everything can be computed
+
+
+% by-hand (theoretical)
+figure(1);
+a=1; b=12;
+xx=linspace(a,b);
+F=@(x) (x-b)/(b-a);
+yy=F(xx);
+plot(xx,yy);
+title(sprintf("exact - mean:%.4f var:%.4f P=%.4f",(a+b)/2,(b-a)^2/12,F(8)-F(1)));
+axis padded;
+
+
+
+% by-simulation
+figure(2);
+N=100000;
+RV=11*rand(1,N)+1;
+ecdf(RV);
+K=sum(RV<=8);
+title(sprintf("ecdf - mean:%.4f var:%.4f P=%.4f",mean(RV),var(RV),K/N));
+axis padded;
+```
+
+
+#### normal distribution
+```matlab
+clc;clear;clf;
+
+% 
+% by hand approach: we know the cdf everything can be computed
+% at least by calling appropriate functions
+
+
+% by-hand (theoretical)
+figure(1);
+xx=linspace(-3,3);
+f=@(x) ?
+F=@(x) ?
+yy=f(xx);
+plot(xx,yy);
+title(sprintf("exact - P=%.4f",));
+axis padded;
+
+
+
+% by-simulation
+figure(2);
+N=100000;
+RV=?;
+ecdf(RV);
+K=?;
+title(sprintf("ecdf - P=%.4f",K/N));
+axis padded;
+```
+
+
+#### discrete rv, properties
+```matlab
+clc;clear;clf;
+
+% 
+% by hand approach: we know the pd of the rv: everything can be computed
+% see: the function piecewise
+
+
+% by-hand (theoretical)
+figure(1);
+?
+xx=
+F=@(x) ?
+yy=f(xx);
+plot(xx,yy);
+title(sprintf("exact - P=%.4f",);
+axis padded;
+
+
+
+% by-simulation
+figure(2);
+N=100000;
+RV=?;
+ecdf(RV);
+K=?;
+title(sprintf("ecdf - P=%.4f",K/N));
+axis padded;
+
+```
+
+
+
 
 
