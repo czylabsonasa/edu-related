@@ -27,7 +27,3 @@ K=sum(RV>1/2 & RV<3/4);
 ecdf(RV);
 title(sprintf("simulation: %.4f",K/N));
 axis padded;
-
-
-
-

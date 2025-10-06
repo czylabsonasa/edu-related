@@ -25,15 +25,3 @@ figure(2);
 xx=linspace(1,5);
 plot([-1,1],[0,0],"b",xx,(xx-1)./(xx+1),"b",[-1,5],[1,1],"r");
 axis padded;
-
-
-
-
-
-
-
-
-
-
-
-% b) (x-1)/(x+1) if x>=1, otherwise 0
