@@ -1,4 +1,4 @@
-% exercise 3.2
+% exercise 3.3
 
 clc; clear; clf;
 
