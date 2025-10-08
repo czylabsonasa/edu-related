@@ -12,4 +12,5 @@ below=normcdf(-50,20,50)
 % above: P(X>50)=1-P(X<=50)=1-P(X<50)=1-F(50):
 above=1-normcdf(50,20,50)
 % above+inside+below=Omega:
+%
 inside=1-(above+below)
