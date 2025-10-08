@@ -15,6 +15,7 @@ module myInclude
       "m"=>"matlab",
       "py"=>"python",
       "cc"=>"c++",
+      "txt"=>"matlab",
    )
    langExt=collect(keys(ext2lang))
    docExt=["pdf"]
@@ -22,26 +23,27 @@ module myInclude
    knownExt=vcat(langExt,docExt,picExt)
    
    # the substitution pattern
-   const patt=Regex(raw"{{(?<desc>[^@]+)@(?<name>[^\.]+).(?<ext>\w+)}}")
+   #do i want the description here?
+   #const patt=Regex(raw"{{(?<desc>[^@]+)@(?<name>[^\.]+).(?<ext>\w+)}}")
+   const patt=Regex(raw"{{(?<name>[^\.]+).(?<ext>\w+)}}")
 
-   function frameIt(desc,name,ext,path)
+   function frameIt(name,ext,path)
       _DBG_&&printstyled("frameIt!\n";color=:green)
       body=if ext in langExt
          src=read(path,String)
          _DBG_&&println(stderr,src[1:33])
          """
-         #### $(desc)
          ```$(ext2lang[ext])
          $(src)
          ```
          """
       elseif ext in docExt
          """
-         [$(desc)]($(name).$(ext))
+         [$(name)]($(name).$(ext))
          """
       elseif ext in picExt
          """
-         ![$(desc)]($(name).$(ext))
+         ![$(name)]($(name).$(ext))
          """
       else
          @assert 1<1 "unknown extension"
@@ -49,10 +51,38 @@ module myInclude
       body
    end
 
+#   function frameIt(desc,name,ext,path)
+#      _DBG_&&printstyled("frameIt!\n";color=:green)
+#      body=if ext in langExt
+#         src=read(path,String)
+#         _DBG_&&println(stderr,src[1:33])
+#         """
+         ### $(desc)
+#         ```$(ext2lang[ext])
+#         $(src)
+#         ```
+#         """
+#      elseif ext in docExt
+#         """
+#         [$(desc)]($(name).$(ext))
+#         """
+#      elseif ext in picExt
+#         """
+#         ![$(desc)]($(name).$(ext))
+#         """
+#      else
+#         @assert 1<1 "unknown extension"
+#      end
+#      body
+#   end
+
+
+
    function getSubPair(m::RegexMatch,folder)
       _DBG_&&printstyled("getSubPair!\n";color=:green)
-      desc,name,ext=m["desc"],m["name"],m["ext"]
-      _DBG_&&println(stderr,"$(desc) $(name) $(ext)")
+      #desc,name,ext=m["desc"],m["name"],m["ext"]
+      name,ext=m["name"],m["ext"]
+      _DBG_&&println(stderr,"$(name) $(ext)")
       if !(ext in knownExt)
          printstyled("unknown extension: $(ext)"; color=:red)
          return
@@ -63,7 +93,7 @@ module myInclude
          printstyled("no such file: $(path)"; color=:red)
          return
       end
-      return """$(m.match)"""=>frameIt(desc,name,ext,path)
+      return """$(m.match)"""=>frameIt(name,ext,path)
    end
 
    function Include(dir)
