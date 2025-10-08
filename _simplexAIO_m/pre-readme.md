@@ -1,5 +1,5 @@
 ### simplex table computations
-- all in one version
+- **all in one version**
 - simplex tables w/o hand computations, but you should decide the swaps.
 - the rationals used are based on int64. (different from the builtin rat/rats).
   - beware of overflow, it is not suited for extreme cases.
