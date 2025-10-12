@@ -1,6 +1,6 @@
 ### lab-5
 
-- [the slides](5-General-Rv.pdf)
+- [5-General-Rv](5-General-Rv.pdf)
 
 
 #### is it a cdf? - 9.3
@@ -36,7 +36,7 @@ axis padded;
 ```
 
 
-#### what is the cdf? - 9.5 (geometric prob.)
+#### what is the cdf? - 9.5 (geometric prob.
 ```matlab
 clc;clear;clf;
 
@@ -70,7 +70,7 @@ axis padded;
 ```
 
 
-#### what is the cdf again? - 10.1 (geometric prob).
+#### what is the cdf again? - 10.1 (geometric prob)
 ```matlab
 clc;clear;clf;
 
@@ -168,6 +168,7 @@ below=normcdf(-50,20,50)
 % above: P(X>50)=1-P(X<=50)=1-P(X<50)=1-F(50):
 above=1-normcdf(50,20,50)
 % above+inside+below=Omega:
+%
 inside=1-(above+below)
 
 ```
@@ -204,8 +205,3 @@ title(sprintf("ecdf - P=%.4f",K/N));
 axis padded;
 
 ```
-
-
-
-
-
