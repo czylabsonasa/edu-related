@@ -1,9 +1,10 @@
 ### lab-2
 
-- [the slides](2-Class-Prob.pdf)
+#### the slides
+- [2-Class-Prob](2-Class-Prob.pdf)
 
 
-#### exercise 3.1, 2 dice,the sum is 8
+exercise 3.1, 2 dice,the sum is 8
 ```matlab
 % exercise 3.1
 
@@ -35,7 +36,7 @@ title("exercise 3.1 two dice\n the sum is 8");
 ```
 
 
-#### exercise 3.3, 2 dice,the first is larger
+exercise 3.3, 2 dice,the first is larger
 ```matlab
 % exercise 3.3
 
@@ -67,7 +68,7 @@ title("exercise 3.2 two dice\n the first > second");
 ```
 
 
-#### exercise 3.7, men,women,round table
+exercise 3.7, men,women,round table
 ```matlab
 % exercise 3.7, women, men, round table
 
@@ -105,7 +106,7 @@ title(sprintf("exercise 3.7 round table\n 5 women, 5 men"));
 ```
 
 
-#### exercise 3.14, colored balls
+exercise 3.14, colored balls
 ```matlab
 % exercise 3.14b, w/o replacement
 
@@ -144,7 +145,7 @@ title(sprintf("exercise 3.14b urn\n 20 red, 30 white, 10 chosen w/o replacement.
 ```
 
 
-#### exercise 3.17, lottery, hit>=3
+exercise 3.17, lottery, hit>=3
 ```matlab
 % exercise 3.17, lottery, hit at least 3
 % for it is slow for large N, it is better to plot the partial results to
