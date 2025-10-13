@@ -1,5 +1,6 @@
 ### app-stat
 
+#### Labor
 - [0-Matlab](0-Matlab.pdf)
 
 - [lab-1](lab-1/readme.md)
@@ -9,4 +10,5 @@
 - [lab-5](lab-5/readme.md)
 - [lab-6](lab-6/readme.md)
 
-
+#### lectures
+- [are here](lectures/readme.md)
