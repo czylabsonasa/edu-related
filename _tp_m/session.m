@@ -1,3 +1,5 @@
+>> data=dlmread("ex1.txt")
+
 data =
 
      2     4     8     3     7    20
