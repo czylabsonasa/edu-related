@@ -16,6 +16,7 @@
 - [lu decomposition](_mlu/readme.md)
 - [simplex table computations](_simplex_m/readme.md)
 - [simplex - all in one version](_simplexAIO_m/readme.md)
+- [transportation problem](_tp_m/readme.md)
 
 #### "advanced" topics
 - [die sum](_diesum/readme.md)
