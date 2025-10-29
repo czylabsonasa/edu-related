@@ -17,6 +17,7 @@
 - [simplex table computations](_simplex_m/readme.md)
 - [simplex - all in one version](_simplexAIO_m/readme.md)
 - [transportation problem](_tp_m/readme.md)
+- [let's make gaussian elimination](_mkgauss/readme.md)
 
 #### "advanced" topics
 - [die sum](_diesum/readme.md)
