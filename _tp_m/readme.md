@@ -37,7 +37,7 @@ end
 #### sample data file
 ```matlab
 # Varga:Gyak. prog., 153.o, 2.3 példa, Vogel-Korda
-# opt=530
+# opt=560 (according to linprog@matlab)
 2   4   8   3   7   20
 5   0  10   4   2   30
 3   6  10   5  10   40
