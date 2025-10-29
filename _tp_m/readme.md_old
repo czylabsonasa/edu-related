@@ -1,20 +1,19 @@
 ### transportation problem with matlab
 - [script version](tp_raw.m)
 - [function version](tp.m)
+  - TODO: unit-tests
 - for creating the cost matrix see: [circshift](https://mathworks.com/help/matlab/ref/circshift.html) and [repmat](https://mathworks.com/help/matlab/ref/repmat.html)
 - for getting the data see: [readmatrix](https://mathworks.com/help/matlab/ref/readmatrix.html)
 
 #### source
 ```matlab
-function [x,fx]=tp(data_file)
-   % [x,fx]=tp(data_file)
-   C=readmatrix(data_file);
-   R=C(1:end-1,end);
-   F=C(end,1:end-1);
+function [x,fx]=tp(C,R,F)
+   % C - cost matrix
+   % R - storage/factory capacity vector
+   % F - warehouse/retail store capacity
    assert(sum(R)==sum(F));
-   C=C(1:end-1,1:end-1);
-   [nR,nF]=size(C);
-
+   nR=length(R);
+   nF=length(F);
    bas=[ones(1,nF), zeros(1,(nR-1)*nF)];
    A=[];
    for b=1:nR
@@ -22,11 +21,7 @@ function [x,fx]=tp(data_file)
    end
    A=[A; repmat(eye(nF),1,nR)];
    b=[R(:);F(:)];
-   % we need row-major splatting:
-   C=C';C=C(:);
    [x,fx]=linprog(C, [],[], A, b, zeros(nR*nF,1),inf*ones(nR*nF,1));
-   % reshape x, to see the optimal transportation:
-   x=reshape(x,nF,nR)';
 end
 
 
@@ -50,25 +45,72 @@ end
 
 #### sample session
 ```matlab
->> [x,fx]=tp("ex1.txt")
+>> data=readmatrix("ex1.txt")
+
+data =
+
+     2     4     8     3     7    20
+     5     0    10     4     2    30
+     3     6    10     5    10    40
+     1    10     2     6     8    50
+    20    20    20    20    60   140
+
+>> R=data(1:end-1,end)
+
+R =
+
+    20
+    30
+    40
+    50
+
+>> F=data(end,1:end-1)
+
+F =
+
+    20    20    20    20    60
+
+>> C=data(1:end-1,1:end-1)
+
+C =
+
+     2     4     8     3     7
+     5     0    10     4     2
+     3     6    10     5    10
+     1    10     2     6     8
+
+>> [x,fx]=tp(C,R,F)
 
 Optimal solution found.
 
 
 x =
 
-     0     0     0     0    20
-     0     0     0     0    30
-     0    20     0    20     0
-    20     0    20     0    10
+     0
+     0
+     0
+    20
+     0
+    20
+    10
+     0
+     0
+     0
+     0
+    10
+     0
+     0
+    30
+     0
+     0
+    20
+     0
+    30
 
 
 fx =
 
-   560
-
->> help tp
-  [x,fx]=tp(data_file)
+   530
 
 ```
 

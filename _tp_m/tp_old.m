@@ -1,12 +1,11 @@
+%function [x,fx]=tp(C,R,F)
 function [x,fx]=tp(data_file)
-   % [x,fx]=tp(data_file)
-   C=readmatrix(data_file);
-   R=C(1:end-1,end);
-   F=C(end,1:end-1);
+   % C - cost matrix
+   % R - storage/factory capacity vector
+   % F - warehouse/retail store capacity
    assert(sum(R)==sum(F));
-   C=C(1:end-1,1:end-1);
-   [nR,nF]=size(C);
-
+   nR=length(R);
+   nF=length(F);
    bas=[ones(1,nF), zeros(1,(nR-1)*nF)];
    A=[];
    for b=1:nR
@@ -17,7 +16,6 @@ function [x,fx]=tp(data_file)
    % we need row-major splatting:
    C=C';C=C(:);
    [x,fx]=linprog(C, [],[], A, b, zeros(nR*nF,1),inf*ones(nR*nF,1));
-   % reshape x, to see the optimal transportation:
    x=reshape(x,nF,nR)';
 end
 
