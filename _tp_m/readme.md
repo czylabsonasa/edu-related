@@ -1,6 +1,7 @@
 ### transportation problem with matlab
 - [script version](tp_raw.m)
 - [function version](tp.m)
+- for getting the data see: [readmatrix](https://mathworks.com/help/matlab/ref/readmatrix.html)
 
 #### source
 ```matlab
@@ -28,11 +29,13 @@ end
 
 #### sample data file
 ```matlab
+# Varga:Gyak. prog., 153.o, 2.3 példa, Vogel-Korda
+# opt=530
 2   4   8   3   7   20
 5   0  10   4   2   30
 3   6  10   5  10   40
 1  10   2   6   8   50
-20 20  20  20  60   nan
+20 20  20  20  60   140
 
 ```
 
@@ -40,7 +43,7 @@ end
 
 #### sample session
 ```matlab
->> data=dlmread("ex1.txt")
+>> data=readmatrix("ex1.txt")
 
 data =
 
@@ -48,7 +51,7 @@ data =
      5     0    10     4     2    30
      3     6    10     5    10    40
      1    10     2     6     8    50
-    20    20    20    20    60   NaN
+    20    20    20    20    60   140
 
 >> R=data(1:end-1,end)
 

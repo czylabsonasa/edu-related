@@ -1,4 +1,4 @@
->> data=dlmread("ex1.txt")
+>> data=readmatrix("ex1.txt")
 
 data =
 
@@ -6,7 +6,7 @@ data =
      5     0    10     4     2    30
      3     6    10     5    10    40
      1    10     2     6     8    50
-    20    20    20    20    60   NaN
+    20    20    20    20    60   140
 
 >> R=data(1:end-1,end)
 
