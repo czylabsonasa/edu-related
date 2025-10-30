@@ -8,12 +8,20 @@ function g=mkGauss(M)
    end
    function swap0(i,j)
       % swap0(c,i,j)
-      % swap the i-th and j-th row
+      % swaps the i-th and j-th row
       % it modifies the matrix M (in place)
       tmp=M(j,:);
       M(j,:)=M(i,:);
       M(i,:)=tmp;
    end
+
+   function mul0(c,i)
+      % mul0(c,i)
+      % multiplies the i-th row by c
+      % it modifies the matrix M (in place)
+      M(i,:)=c*M(i,:);
+   end
+
 
    function show0()
       disp(M);
@@ -21,5 +29,6 @@ function g=mkGauss(M)
 
    g.subtract=@subtract0;
    g.swap=@swap0;
+   g.mul=@mul0;
    g.show=@show0;
 end
