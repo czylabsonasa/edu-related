@@ -18,7 +18,8 @@
 - mean, var, std
 - load, mat-file, readtable
 - corr
-- tabulate
+- tabulate, cell2table, table.field syntax
+  - categorical - works without it
 - flip
 
 
