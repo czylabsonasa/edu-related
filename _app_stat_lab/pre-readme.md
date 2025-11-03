@@ -9,6 +9,7 @@
 - [lab-4](lab-4/readme.md)
 - [lab-5](lab-5/readme.md)
 - [lab-7](lab-7/readme.md)
+  - [gzipped](lab-7-aio.tgz)
 
 #### lectures
 - [are here](lectures/readme.md)

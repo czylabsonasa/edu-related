@@ -9,6 +9,15 @@
 #### data
 - [ustemp original](../data/ustemp.txt)
 - [ustemp modified](../data/ustemp_mod.txt)
+- [covid](../data/covid.csv)
+
+#### vocabulary
+- boxplot, median, quartile, IQR, extreme value, outlier
+- ecdf
+- mean, var, std
+- load, mat-file, readtable
+- corr
+
 
 
 #### cdf/ecdf plots by hand
