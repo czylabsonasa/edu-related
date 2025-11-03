@@ -12,11 +12,14 @@
 - [covid](../data/covid.csv)
 
 #### vocabulary
-- boxplot, median, quartile, IQR, extreme value, outlier
+- boxplot, bar
+- median, quartile, IQR, extreme value, outlier
 - ecdf
 - mean, var, std
 - load, mat-file, readtable
 - corr
+- tabulate
+- flip
 
 
 
