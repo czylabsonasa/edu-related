@@ -12,4 +12,7 @@
 
 
 #### cdf/ecdf plots by hand
-{{prog1.m}}
+- we don't want vertical lines in function plots
+- in practice just use `ecdf`
+
+{{piecewise_constant.m}}

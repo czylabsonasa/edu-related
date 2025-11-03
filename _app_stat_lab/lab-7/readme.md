@@ -12,6 +12,9 @@
 
 
 #### cdf/ecdf plots by hand
+- we don't want vertical lines in function plots
+- in practice just use `ecdf`
+
 ```matlab
 clc;clear;close all;
 
