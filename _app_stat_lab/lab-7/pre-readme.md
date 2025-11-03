@@ -1,10 +1,14 @@
 ### lab-7
 
-- {{7-Stat-part1.pdf}}
+#### the labor files
+- [first](lab-7-1.pdf)
+- [second](lab-7-2.mlx)
+- [third (questions)](lab-7-3-Q.mlx)
+- [third (questions+answers)](lab-7-3-QA.mlx)
 
-#### the mlx files
-- [questions](lab-7-empty.mlx)
-- [questions+answers](lab-7-full.mlx)
+#### data
+- [ustemp original](../data/ustemp.txt)
+- [ustemp modified](../data/ustemp_mod.txt)
 
 
 #### cdf/ecdf plots by hand
