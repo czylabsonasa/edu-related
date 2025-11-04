@@ -1,6 +1,7 @@
 function [x,fx]=tp(data_file)
    % [x,fx]=tp(data_file)
-   C=readmatrix(data_file);
+   % can have comments (at least in the header)
+   C=readmatrix(data_file,"CommentStyle",["%"]);
    R=C(1:end-1,end);
    F=C(end,1:end-1);
    assert(sum(R)==sum(F));
