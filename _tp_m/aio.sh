@@ -1,1 +1,1 @@
-tar czf aio.tgz data tp.m
+tar czf aio.tgz data tp.m functionSignatures.json
