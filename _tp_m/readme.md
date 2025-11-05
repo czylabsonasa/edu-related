@@ -3,12 +3,15 @@
 - [function version](tp.m)
 - for creating the cost matrix see: [circshift](https://mathworks.com/help/matlab/ref/circshift.html) and [repmat](https://mathworks.com/help/matlab/ref/repmat.html)
 - for getting the data see: [readmatrix](https://mathworks.com/help/matlab/ref/readmatrix.html)
+- [all in one](tp_aio.tgz)
 
 #### source
 ```matlab
 function [x,fx]=tp(data_file)
    % [x,fx]=tp(data_file)
-   C=readmatrix(data_file);
+   % can have comments (at least in the header)
+   C=readmatrix(data_file,"CommentStyle",["#"],"FileType","text");
+   % C=readmatrix(data_file);
    R=C(1:end-1,end);
    F=C(end,1:end-1);
    assert(sum(R)==sum(F));
@@ -38,6 +41,8 @@ end
 ```matlab
 # Varga:Gyak. prog., 153.o, 2.3 példa, Vogel-Korda
 # opt=560 (according to linprog@matlab)
+# but we have several branches to perform Vogel-Korda and
+
 2   4   8   3   7   20
 5   0  10   4   2   30
 3   6  10   5  10   40

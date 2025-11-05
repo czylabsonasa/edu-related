@@ -1,0 +1,9 @@
+{
+"tp":
+{
+  "inputs":
+  [
+    {"name":"filename", "kind":"required", "type":"filepath=*.tp" }
+  ]
+}
+}

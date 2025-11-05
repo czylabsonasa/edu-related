@@ -3,6 +3,7 @@
 - [function version](tp.m)
 - for creating the cost matrix see: [circshift](https://mathworks.com/help/matlab/ref/circshift.html) and [repmat](https://mathworks.com/help/matlab/ref/repmat.html)
 - for getting the data see: [readmatrix](https://mathworks.com/help/matlab/ref/readmatrix.html)
+- [all in one](tp_aio.tgz)
 
 #### source
 {{tp.m}}
