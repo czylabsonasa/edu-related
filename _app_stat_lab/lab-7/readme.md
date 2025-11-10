@@ -2,7 +2,9 @@
 
 #### the labor files
 - [first part](lab-7-1.pdf)
-- [second part](lab-7-2.mlx)
+- second part
+  - [mlx](lab-7-2.mlx)
+  - [pdf](lab-7-2.pdf)
 - third part - Questions
   - [mlx](lab-7-3-Q.mlx)
   - [pdf](lab-7-3-Q.pdf)
