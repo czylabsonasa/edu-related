@@ -11,7 +11,7 @@
 - third part - Questions+Answers
   - [mlx](lab-7-3-QA.mlx)
   - [pdf](lab-7-3-QA.pdf)
-- [all in one](lab-7-aio.tgz)
+- [all in one](aio.tgz)
 
 #### data
 - do not forget to check the presence of missing values
