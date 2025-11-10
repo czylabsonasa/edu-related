@@ -1,12 +1,19 @@
 ### lab-7
 
 #### the labor files
-- [first](lab-7-1.pdf)
-- [second](lab-7-2.mlx)
-- [third (questions)](lab-7-3-Q.mlx)
-- [third (questions+answers)](lab-7-3-QA.mlx)
+- [first part](lab-7-1.pdf)
+- [second part](lab-7-2.mlx)
+- third part - Questions
+  - [mlx](lab-7-3-Q.mlx)
+  - [pdf](lab-7-3-Q.pdf)
+- third part - Questions+Answers
+  - [mlx](lab-7-3-QA.mlx)
+  - [pdf](lab-7-3-QA.pdf)
 
 #### data
+- do not forget to check the presence of missing values
+  - for numerical arrays they are represented by `nan`-s
+  - `isnan`+indexing by logical array (filtering)
 - [ustemp original](../data/ustemp.txt)
 - [ustemp modified](../data/ustemp_mod.txt)
 - [covid](../data/covid.csv)
