@@ -9,6 +9,10 @@
 - [lab-4](lab-4/readme.md)
 - [lab-5](lab-5/readme.md)
 - [lab-7](lab-7/readme.md)
+- [lab-8](lab-8/readme.md)
+- [lab-9](lab-9/readme.md)
+
+
 
 #### data files
 - [data](data)

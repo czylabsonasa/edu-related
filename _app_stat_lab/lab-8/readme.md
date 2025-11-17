@@ -1,5 +1,8 @@
 #### files 
 - [labor pdf](lab-8.pdf)
+- [empty](8-empty.pdf)
+- [sol](8-sol.pdf)
+
 
 #### vocabulary
 - sample, (test-)statistics, hypothesis, reject, accept
