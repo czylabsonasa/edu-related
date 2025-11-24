@@ -1,5 +1,8 @@
 ### app-stat
 
+#### useful (but not a must)
+- https://matlabscripts.com/
+
 #### labors
 - using the same numbering as on the e-learning
 - [lab-0](lab-0/0-Matlab.pdf)
@@ -11,6 +14,7 @@
 - [lab-7](lab-7/readme.md)
 - [lab-8](lab-8/readme.md)
 - [lab-9](lab-9/readme.md)
+- [lab-10](lab-10/readme.md)
 
 
 
