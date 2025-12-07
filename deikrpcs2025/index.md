@@ -13,7 +13,7 @@
 - maximum search through different intervals.
 - large numbers: it is impossible to precomputate everything. But considering the actual bounds:
   - relatively small number of steps needed (about $30$)
-  - small length intervals are of small lengths (max $10^5$)
+  - small length intervals (max $10^5$)
   - caching/memoization
     - assuming that no more than 30 steps required the upper bound for the complexity of one case (both memory and time) is $30*10^5$.
 
@@ -43,12 +43,10 @@
 
 - only administration needed to solve it
   - rational arithmetic is not a must.
-- the princple of *Linearity of the expectation* is used 
+- the principle of *Linearity of the expectation* is used 
 - $\mathcal{O}(Q*N)$
 - [io](exam-1.tgz)
 - [html](exam-1.html)
-
-<br>
 
 <hr>
 
@@ -66,9 +64,9 @@
 - evaluate it at points of $L,R$
 - if $\frac{-b}{2a} \in [L,R]$ then, eval $f$ at it and adjust the $min/max$ appropriately 
 - $\mathcal{O}(Q+N)$
-- it seems trivial, but it not about evaluate $f$ at integer points (and it would too slow)
-  - consider $3x^2-x+10$ on $[-3,3]$ it has a minimizer at $-\frac{1}{6}$ and the value is 
-  $10.25$. 
+- it seems trivial, but it is not about evaluate $f$ at integer points (and it would too slow)
+  - consider $20x^2-10x+10$ on $[-1,1]$ it has a minimizer at $0.25$ and the value is 
+  $8.75$. $f(\{-1,0,1\})=\{40,10,20\}$, so somewhere on the interval $f$ has a value of $9$.
   - $f$ is continous!!! Bolzano IVT...
 - [io](optimize-1.tgz)
 - [html](optimize-1.html)

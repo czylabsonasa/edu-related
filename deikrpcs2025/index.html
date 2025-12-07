@@ -16,7 +16,7 @@ considering the actual bounds:
 <ul>
 <li>relatively small number of steps needed (about
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>30</mn><annotation encoding="application/x-tex">30</annotation></semantics></math>)</li>
-<li>small length intervals are of small lengths (max
+<li>small length intervals (max
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mn>5</mn></msup><annotation encoding="application/x-tex">10^5</annotation></semantics></math>)</li>
 <li>caching/memoization
 <ul>
@@ -73,12 +73,11 @@ there is no left friend</li>
 <ul>
 <li>rational arithmetic is not a must.</li>
 </ul></li>
-<li>the princple of <em>Linearity of the expectation</em> is used</li>
+<li>the principle of <em>Linearity of the expectation</em> is used</li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="script"><mi>𝒪</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mi>Q</mi><mo>*</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(Q*N)</annotation></semantics></math></li>
 <li><a href="exam-1.tgz">io</a></li>
 <li><a href="exam-1.html">html</a></li>
 </ul>
-<p><br></p>
 <hr>
 <h3 id="lattice-1">lattice-1</h3>
 <ul>
@@ -102,18 +101,23 @@ at it and adjust the
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>i</mi><mi>n</mi><mi>/</mi><mi>m</mi><mi>a</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">min/max</annotation></semantics></math>
 appropriately</li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="script"><mi>𝒪</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mi>Q</mi><mo>+</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(Q+N)</annotation></semantics></math></li>
-<li>it seems trivial, but it not about evaluate
+<li>it seems trivial, but it is not about evaluate
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
 at integer points (and it would too slow)
 <ul>
 <li>consider
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>+</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">3x^2-x+10</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>20</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>10</mn><mi>x</mi><mo>+</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">20x^2-10x+10</annotation></semantics></math>
 on
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mo>−</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-3,3]</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-1,1]</annotation></semantics></math>
 it has a minimizer at
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mn>1</mn><mn>6</mn></mfrac></mrow><annotation encoding="application/x-tex">-\frac{1}{6}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.25</mn><annotation encoding="application/x-tex">0.25</annotation></semantics></math>
 and the value is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>10.25</mn><annotation encoding="application/x-tex">10.25</annotation></semantics></math>.</li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>8.75</mn><annotation encoding="application/x-tex">8.75</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>40</mn><mo>,</mo><mn>10</mn><mo>,</mo><mn>20</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f(\{-1,0,1\})=\{40,10,20\}</annotation></semantics></math>,
+so somewhere on the interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+has a value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>9</mn><annotation encoding="application/x-tex">9</annotation></semantics></math>.</li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
 is continous!!! Bolzano IVT…</li>
 </ul></li>
