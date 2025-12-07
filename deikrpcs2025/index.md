@@ -1,5 +1,13 @@
 ## deik-rpcs 2025 editorial
 
+
+### info
+- on github html it is not rendered and i'm not interested to learn how could it be done
+- instead here is to the [zipped stuff](stuff.tgz)
+  - it works fine locally (tested only on linux)
+
+
+
 ### digits-3
 
 - maximum search through different intervals.
@@ -10,7 +18,7 @@
     - assuming that no more than 30 steps required the upper bound for the complexity of one case (both memory and time) is $30*10^5$.
 
 - [io](digits-3.tgz)
-- [html](https://htmlpreview.github.io/?url=https://github.com/czylabsonasa/edu-related/blob/master/deikrpcs2025/digits-3.html)
+- [html](digits-3.html)
 
 
 <hr>
@@ -26,7 +34,7 @@
   - finding a left neighbour is similar: find the rightmost digit that *can be decreased*
     - for $99$ there is no left friend
 - [io](digits-1.tgz)
-- [html](https://htmlpreview.github.io/?url=https://github.com/czylabsonasa/edu-related/blob/master/deikrpcs2025/digits-1.html)
+- [html](digits-1.html)
 
 <hr>
 
@@ -145,6 +153,3 @@ $2~3^2c^3<ab^2c^3\le N$
 - [io](lattice-2.tgz)
 - [html](lattice-2.html)
 <hr>
-
-### github
-- i'll put the stuff here [github.com/czylabsonasa/edu-related/deikrpcs2025](github.com/czylabsonasa/edu-related/deikrpcs2025)
