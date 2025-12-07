@@ -1,0 +1,179 @@
+<style>
+  .main-content {
+    display: none;
+  }
+  #hu:checked ~ .main-content[data-lang=hu] {
+    display: block;
+  }
+  #en:checked ~ .main-content[data-lang=en] {
+    display: block;
+  }
+</style>
+<hr>
+<input type="radio" name="lang" id="hu" checked/>
+<label for="hu">HU</label> <input type="radio" name="lang" id="en" />
+<label for="en">EN</label>
+<hr>
+<div class="main-content" data-lang="hu">
+<h1 xml:lang="hu">
+digits-1
+</h1>
+<p xml:lang="hu">
+Két (pozitív) számot <em>barát</em>nak nevezünk, ha a számjegyek összege
+egyenlő. Például a következő számok mind barátok egymással: <br />
+<code style="font-size: 1.3em;"> 3,12,21,30,102,111,120,201,210 </code>
+<br /> Tekintve például 111-et a tőle kisebb számok közül a 102
+legközelebbi barátja - a tőle nagyobb számok közül pedig 120. Ezeket a
+legközelebbi barátokat szeretnénk mindenféle számok esetén meghatározni.
+Azaz: adott
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+esetén keressük azt lehető legnagyobb
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+és lehető legkisebb
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+számot melyekre
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>L</mi><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">0&lt;L&lt;X&lt;R</annotation></semantics></math>
+és mindkettő számjegyeinek összege megegyezik
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+számjegyeinek összegével.
+</p>
+<h2 xml:lang="hu">
+Bemenet specifikáció
+</h2>
+<p xml:lang="hu">
+Az első sorban egy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+szám: az esetek száma. Ezután
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+sor következik, mindegyikben egy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+számmal.
+</p>
+<h2 xml:lang="hu">
+Kimenet specifikáció
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+sor, mindegyikben a keresett
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+és
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+szám. Ha az adott
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>-hez
+nem létezik
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+vagy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+akkor írjunk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>-et
+a megfelelő helyre.
+</p>
+<h2 xml:lang="hu">
+Korlátok
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>X</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le X \le 1\_000\_000\_000\_000\_000</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa bemenet
+</h2>
+<pre class="download" xml:lang="hu">5
+10
+2
+738374
+123123123
+11000</pre>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa kimenet
+</h2>
+<pre class="download" xml:lang="hu">1 100
+-1 11
+738365 738383
+123123114 123123132
+10100 20000
+</pre>
+</div>
+<div class="main-content" data-lang="en">
+<h1 xml:lang="en">
+digits-1
+</h1>
+<p xml:lang="en">
+We call two (positive) numbers friends if the sum of their digits is
+equal. For example, the following numbers are all friends with each
+other: <br /> <code style="font-size: 1.3em;">
+3,12,21,30,102,111,120,201,210 </code> <br /> Considering, for instance,
+111: among numbers smaller than it, its closest friend is 102; among
+numbers larger than it, the closest friend is 120. We want to determine
+these closest friends for various numbers. That is: given
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+find the largest possible
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+and smallest possible
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>L</mi><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">0 &lt; L &lt; X &lt; R</annotation></semantics></math>,
+and both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+have the same digit sum as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.
+</p>
+<h2 xml:lang="en">
+Input specification
+</h2>
+<p xml:lang="en">
+The first line contains a single integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>:
+the number of test cases. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+lines follow, each containing a number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.
+</p>
+<h2 xml:lang="en">
+Output specification
+</h2>
+<p xml:lang="en">
+Output
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+lines, each containing the requested
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+numbers. If for a given
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+there is no
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>,
+output
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">−1</annotation></semantics></math>
+in the corresponding position.
+</p>
+<h2 xml:lang="en">
+Constraints
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>X</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le X \le 1\_000\_000\_000\_000\_000</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="en">
+Sample input <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">5
+10
+2
+738374
+123123123
+11000</pre>
+<h2 xml:lang="en">
+Sample output <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">1 100
+-1 11
+738365 738383
+123123114 123123132
+10100 20000
+</pre>
+</div>

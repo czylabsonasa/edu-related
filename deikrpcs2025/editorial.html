@@ -1,0 +1,213 @@
+<h2 id="deik-rpcs-2025-editorial">deik-rpcs 2025 editorial</h2>
+<h3 id="digits-3">digits-3</h3>
+<ul>
+<li>maximum search through different intervals.</li>
+<li>large numbers: it is impossible to precomputate everything. But
+considering the actual bounds:
+<ul>
+<li>relatively small number of steps needed (about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>30</mn><annotation encoding="application/x-tex">30</annotation></semantics></math>)</li>
+<li>small length intervals are of small lengths (max
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mn>5</mn></msup><annotation encoding="application/x-tex">10^5</annotation></semantics></math>)</li>
+<li>caching/memoization
+<ul>
+<li>assuming that no more than 30 steps required the upper bound for the
+complexity of one case (both memory and time) is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>30</mn><mo>*</mo><msup><mn>10</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">30*10^5</annotation></semantics></math>.</li>
+</ul></li>
+</ul></li>
+<li><a href="digits-3.tgz">io</a></li>
+<li><a href="digits-3.html">html</a></li>
+</ul>
+<hr>
+<h3 id="digits-1">digits-1</h3>
+<ul>
+<li>searching for closest same digit-sum number.</li>
+<li>the brute-force “Loop until you find it” approach is ok for small
+numbers.</li>
+<li>for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\_000\_000\_000</annotation></semantics></math>
+the next number is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">10\_000\_000\_000</annotation></semantics></math>,
+which is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mn>10</mn><mn>9</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(10^{9})</annotation></semantics></math>
+steps away
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>→</mo><annotation encoding="application/x-tex">\longrightarrow</annotation></semantics></math>
+TLE</li>
+<li>an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="script"><mi>𝒪</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">number of digits</mtext><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(\text{number of digits})</annotation></semantics></math>
+approach similar to the <strong>next permutation</strong> algo can be
+used:
+<ul>
+<li>for right neighbour: search for the rightmost (weakest) digit that
+can be increased by 1. The <em>can be increased</em> means it is smaller
+than 9 and there is a positive digit to its right:
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>890</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mo>→</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mn>900</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>008</mn></mrow><annotation encoding="application/x-tex">890\_000\_ 000 ~~\longrightarrow~~ 900\_000\_008</annotation></semantics></math></li>
+<li>right friend is always exist</li>
+</ul></li>
+<li>finding a left neighbour is similar: find the rightmost digit that
+<em>can be decreased</em>
+<ul>
+<li>for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>99</mn><annotation encoding="application/x-tex">99</annotation></semantics></math>
+there is no left friend</li>
+</ul></li>
+</ul></li>
+<li><a href="digits-1.tgz">io</a></li>
+<li><a href="digits-1.html">html</a></li>
+</ul>
+<hr>
+<h3 id="exam-1">exam-1</h3>
+<ul>
+<li>only administration needed to solve it
+<ul>
+<li>rational arithmetic is not a must.</li>
+</ul></li>
+<li>the princple of <em>Linearity of the expectation</em> is used</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="script"><mi>𝒪</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mi>Q</mi><mo>*</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(Q*N)</annotation></semantics></math></li>
+<li><a href="exam-1.tgz">io</a></li>
+<li><a href="exam-1.html">html</a></li>
+</ul>
+<p><br></p>
+<hr>
+<h3 id="lattice-1">lattice-1</h3>
+<ul>
+<li>two nested loops with early break will do the job</li>
+<li>no optimization needed</li>
+<li><a href="lattice-1.tgz">io</a></li>
+<li><a href="lattice-1.html">html</a></li>
+</ul>
+<hr>
+<h3 id="optimize-1">optimize-1</h3>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is an (at most) second order polynomial</li>
+<li>evaluate it at points of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>,</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">L,R</annotation></semantics></math></li>
+<li>if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mo>−</mo><mi>b</mi></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>L</mi><mo>,</mo><mi>R</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\frac{-b}{2a} \in [L,R]</annotation></semantics></math>
+then, eval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+at it and adjust the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>i</mi><mi>n</mi><mi>/</mi><mi>m</mi><mi>a</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">min/max</annotation></semantics></math>
+appropriately</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="script"><mi>𝒪</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mi>Q</mi><mo>+</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(Q+N)</annotation></semantics></math></li>
+<li>it seems trivial, but it not about evaluate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+at integer points (and it would too slow)
+<ul>
+<li>consider
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>+</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">3x^2-x+10</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mo>−</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-3,3]</annotation></semantics></math>
+it has a minimizer at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mn>1</mn><mn>6</mn></mfrac></mrow><annotation encoding="application/x-tex">-\frac{1}{6}</annotation></semantics></math>
+and the value is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>10.25</mn><annotation encoding="application/x-tex">10.25</annotation></semantics></math>.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is continous!!! Bolzano IVT…</li>
+</ul></li>
+<li><a href="optimize-1.tgz">io</a></li>
+<li><a href="optimize-1.html">html</a></li>
+</ul>
+<hr>
+<h3 id="optimize-2">optimize-2</h3>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is a piecewise linear function whose breakpoints at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>k</mi></msub><annotation encoding="application/x-tex">B_k</annotation></semantics></math>-s.
+(and they are different)</li>
+<li>we need its values only at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>B</mi><mi>N</mi></msub><mo>,</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">{1, B_1,\ldots, B_N, M}</annotation></semantics></math></li>
+<li>a single sweep through the values needed to get the maximal
+profit.</li>
+<li>$(N^2) with naive function evaluation:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+operations per location</li>
+<li>it can be lowered to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="script"><mi>𝒪</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(N)</annotation></semantics></math>,
+but we do not need it</li>
+<li><a href="optimize-2.tgz">io</a></li>
+<li><a href="optimize-2.html">html</a></li>
+</ul>
+<hr>
+<h3 id="permutation-1">permutation-1</h3>
+<ul>
+<li>first you have to decide about the existence of topological ordering
+<ul>
+<li>it can be done with BFS+appropriate administration</li>
+</ul></li>
+<li>you can get the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>-th
+smallest by <em>recursion/backtracking</em>
+<ul>
+<li>always choose the smallest possible zero indegree node, modify its
+neighbours indegree, recurse and restore the original indegrees.</li>
+<li>you wont stuck during the backtracking</li>
+<li>one ordering can be generated in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="script"><mi>𝒪</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(N^2)</annotation></semantics></math></li>
+</ul></li>
+<li><a href="permutation-1.tgz">io</a></li>
+<li><a href="permutation-1.html">html</a></li>
+</ul>
+<hr>
+<h3 id="game-1">game-1</h3>
+<ul>
+<li>smart administration</li>
+<li><a href="game-1.tgz">io</a></li>
+<li><a href="game-1.tgz">html</a></li>
+</ul>
+<hr>
+<h3 id="escape-1">escape-1</h3>
+<ul>
+<li><em>BFS</em> with restrictions</li>
+<li>the many bfs will get TLE (probably)</li>
+<li>we need only one BFS but in a reversed way</li>
+<li><a href="escape-1.tgz">io</a></li>
+<li><a href="escape-1.html">html</a>
+<hr></li>
+</ul>
+<h3 id="matrix-1">matrix-1</h3>
+<ul>
+<li>there is an implicit graph in the background which is a DAG.</li>
+<li>largest to smallest direction</li>
+<li>sort the indices by the values in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>,
+then loop through in a reversed way, for each element examine its
+neighbours in the matrix…</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="script"><mi>𝒪</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(RC)</annotation></semantics></math></li>
+<li><a href="matrix-1.tgz">io</a></li>
+<li><a href="matrix-1.html">html</a></li>
+</ul>
+<hr>
+<h3 id="primes-1">primes-1</h3>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mn>6</mn></msup><mo>&lt;</mo><mi>a</mi><msup><mi>b</mi><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup><mo>≤</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">a^6&lt;ab^2c^3\le N</annotation></semantics></math><br>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mi>b</mi><mn>5</mn></msup><mo>&lt;</mo><mi>a</mi><msup><mi>b</mi><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup><mo>≤</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">2b^5&lt;ab^2c^3\le N</annotation></semantics></math><br>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mspace width="0.222em"></mspace><msup><mn>3</mn><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup><mo>&lt;</mo><mi>a</mi><msup><mi>b</mi><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup><mo>≤</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">2~3^2c^3&lt;ab^2c^3\le N</annotation></semantics></math>
+- we need the primes under
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>N</mi><mrow><mn>2</mn><mspace width="0.222em"></mspace><msup><mn>3</mn><mn>2</mn></msup></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mn>3</mn></mfrac></msup><annotation encoding="application/x-tex">(\frac{N}{2~3^2})^\frac{1}{3}</annotation></semantics></math>
+- brute-force nested loop approach, several aproaches are possible… - <a
+href="primes-1.tgz">io</a> - <a href="primes-1.html">html</a>
+<hr>
+<h3 id="lattice-2">lattice-2</h3>
+<ul>
+<li>inclusion-exclusion principle</li>
+<li>the popular iterative implementation will TLE
+<ul>
+<li>pruning is possible</li>
+</ul></li>
+<li>or one can use the at “most 5” bound and generate all
+combinations.</li>
+<li>the recursive approach with pruning is fast within the given
+bounds</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="script"><mi>𝒪</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mo>*</mo><mi>b</mi><mi>i</mi><mi>n</mi><mi>o</mi><mi>m</mi><mi>i</mi><mi>a</mi><mi>l</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>,</mo><mn>5</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(5*binomial(N,5))</annotation></semantics></math></li>
+<li><a href="lattice-2.tgz">io</a></li>
+<li><a href="lattice-2.html">html</a>
+<hr></li>
+</ul>
+<h3 id="github">github</h3>
+<ul>
+<li>i’ll put the stuff here <a
+href="github.com/czylabsonasa/edu-related/deikrpcs2025">github.com/czylabsonasa/edu-related/deikrpcs2025</a></li>
+</ul>

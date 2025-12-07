@@ -1,0 +1,206 @@
+<style>
+  .main-content {
+    display: none;
+  }
+  #hu:checked ~ .main-content[data-lang=hu] {
+    display: block;
+  }
+  #en:checked ~ .main-content[data-lang=en] {
+    display: block;
+  }
+</style>
+<hr>
+<input type="radio" name="lang" id="hu" checked/>
+<label for="hu">HU</label> <input type="radio" name="lang" id="en" />
+<label for="en">EN</label>
+<hr>
+<div class="main-content" data-lang="hu">
+<h1 xml:lang="hu">
+escape-1
+</h1>
+<p xml:lang="hu">
+Egy labirintusból kell kijutnunk legfeljebb
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+lépést téve. A labirintusban vannak
+<code style="font-size: 1.5em;">0</code>-val jelölt szabadon átjárható
+mezők, és <code style="font-size: 1.5em;">^v&lt;&gt;</code> jelekkel
+jelölt szabad mezők: ezeknél az adott jellel jelölt mezőre csak rendre
+alulról, felülről, jobbról és balról léphetünk be - viszont az elhagyás
+iránya tetszőleges lehet (a szabályok betartásával). Az
+<code style="font-size: 1.5em;">1</code>-el jelölt mezők tiltottak,
+ezekre nem léphetünk, innen nem indulhatunk. Egy lépésben a vízszintes
+vagy függőleges irányban található szomszédos szabad mezőre léphet. Ha
+elértük a labirintus szélét akkor kijutottunk… Döntsük el, hogy adott
+labirintus esetén hány olyan belső (nem a széleken levő) szabad mező van
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>)
+melyről indulva
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+lépésen belül meg tud menekülni.
+</p>
+<h2 xml:lang="hu">
+Bemenet specifikáció
+</h2>
+<p xml:lang="hu">
+Az első sorban a labirintusok
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+száma áll. Egy labirintus leírása: Az első sorban 3 szám
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mspace width="0.222em"></mspace><mi>R</mi><mspace width="0.222em"></mspace><mi>C</mi></mrow><annotation encoding="application/x-tex">S~ R~ C</annotation></semantics></math>
+áll, a maximálisan megtehető lépések száma a labirintus sorainak és
+oszlopainak száma. Ezután
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+sor következik: mindegyikben egy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+hosszú sztring, a fent leírt jelekkel.
+</p>
+<h2 xml:lang="hu">
+Kimenet specifikáció
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+sor, mindegyikben a keresett
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+számmal.
+</p>
+<h2 xml:lang="hu">
+Korlátok
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">1\le T \le 15</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>S</mi><mo>≤</mo><mn>200</mn></mrow><annotation encoding="application/x-tex">1\le S \le 200</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>≤</mo><mi>R</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">3\le R \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>≤</mo><mi>C</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">3\le C \le 100</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa bemenet
+</h2>
+<pre class="download" xml:lang="hu">5
+2 4 4
+1111
+1001
+1011
+0v11
+2 4 4
+1111
+1001
+1011
+0&gt;11
+1 4 4
+1001
+1001
+1011
+0v11
+3 5 5
+00100
+00^00
+1&lt;0&gt;1
+00v00
+00100
+6 5 5
+00100
+00^00
+1&lt;0&gt;1
+00v00
+00100</pre>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa kimenet
+</h2>
+<pre class="download" xml:lang="hu">2
+0
+3
+9
+9
+</pre>
+</div>
+<div class="main-content" data-lang="en">
+<h1 xml:lang="en">
+escape-1
+</h1>
+<p xml:lang="en">
+We need to escape from a maze in at most S steps. The maze contains:
+<code style="font-size: 1.3em;">0</code>-marked freely passable cells.
+<code style="font-size: 1.3em;">^v&lt;&gt;</code>-marked free cells -
+for these, we can only enter from a specific direction: only from
+below,above,from the right,from the left respectively. But we can exit
+in any direction (following the rules).
+<code style="font-size: 1.3em;">1</code>-marked forbidden cells: cannot
+step on them, cannot start from them In one move, we can step to a
+horizontally or vertically adjacent free cell. If we reach the edge of
+the maze, we have escaped… Determine how many internal (not on the
+edges) free cells
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>)
+exist such that starting from there, we can escape within
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+steps.
+</p>
+<h2 xml:lang="en">
+Input specification
+</h2>
+<p xml:lang="en">
+The first line contains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>,
+the number of mazes. Description of a maze: First line: three numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>R</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>C</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">S~~ R~~ C~~</annotation></semantics></math>
+(maximum steps, rows, columns). Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+lines follow: each containing a string of length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+with the characters described above.
+</p>
+<h2 xml:lang="en">
+Output specification
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+lines, each containing the requested number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>.
+</p>
+<h2 xml:lang="en">
+Constraints
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">1\le T \le 15</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>S</mi><mo>≤</mo><mn>200</mn></mrow><annotation encoding="application/x-tex">1\le S \le 200</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>≤</mo><mi>R</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">3\le R \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>≤</mo><mi>C</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">3\le C \le 100</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="en">
+Sample input <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">5
+2 4 4
+1111
+1001
+1011
+0v11
+2 4 4
+1111
+1001
+1011
+0&gt;11
+1 4 4
+1001
+1001
+1011
+0v11
+3 5 5
+00100
+00^00
+1&lt;0&gt;1
+00v00
+00100
+6 5 5
+00100
+00^00
+1&lt;0&gt;1
+00v00
+00100</pre>
+<h2 xml:lang="en">
+Sample output <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">2
+0
+3
+9
+9
+</pre>
+</div>

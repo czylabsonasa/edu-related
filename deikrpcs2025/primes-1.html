@@ -1,0 +1,157 @@
+<style>
+  .main-content {
+    display: none;
+  }
+  #hu:checked ~ .main-content[data-lang=hu] {
+    display: block;
+  }
+  #en:checked ~ .main-content[data-lang=en] {
+    display: block;
+  }
+</style>
+<hr>
+<input type="radio" name="lang" id="hu" checked/>
+<label for="hu">HU</label> <input type="radio" name="lang" id="en" />
+<label for="en">EN</label>
+<hr>
+<div class="main-content" data-lang="hu">
+<h1 xml:lang="hu">
+primes-1
+</h1>
+<p xml:lang="hu">
+Egy pozitív számot mely
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>b</mi><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">a b^2 c^3</annotation></semantics></math>
+alakú, ahol
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi><mo>&lt;</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a&lt;b&lt;c</annotation></semantics></math>
+prímszámok nevezzünk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>123</mn><annotation encoding="application/x-tex">123</annotation></semantics></math>
+számnak. Hány
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>123</mn><annotation encoding="application/x-tex">123</annotation></semantics></math>
+szám van az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>,</mo><mi>N</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[1,N]</annotation></semantics></math>
+intervallumban
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>)?
+</p>
+<h2 xml:lang="hu">
+Bemenet specifikáció
+</h2>
+<p xml:lang="hu">
+Az első sorban van
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+az esetek száma. Majd
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+sor következik az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mi>…</mi><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">N_k ~~ (k=1\ldots T)</annotation></semantics></math>
+számokkal.
+</p>
+<h2 xml:lang="hu">
+Kimenet specifikáció
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+sor a keresett
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mi>…</mi><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Y_k~~(k=1\ldots T)</annotation></semantics></math>
+számokkal.
+</p>
+<h2 xml:lang="hu">
+Korlátok
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>N</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le N_k \le 1\_000\_000\_000\_000\_000</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa bemenet
+</h2>
+<pre class="download" xml:lang="hu">8
+10000
+100000
+1000000
+10000000
+100000000
+1000000000
+10000000000
+100000000000
+</pre>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa kimenet
+</h2>
+<pre class="download" xml:lang="hu">2
+9
+33
+105
+316
+900
+2482
+6762
+</pre>
+</div>
+<div class="main-content" data-lang="en">
+<h1 xml:lang="en">
+primes-1
+</h1>
+<p xml:lang="en">
+We call a positive number of the form
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>b</mi><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">a b^2 c^3</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi><mo>&lt;</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a &lt; b &lt; c</annotation></semantics></math>
+are prime numbers, a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>123</mn><annotation encoding="application/x-tex">123</annotation></semantics></math>
+number. How many
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>123</mn><annotation encoding="application/x-tex">123</annotation></semantics></math>
+numbers are there in the interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>,</mo><mi>N</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[1, N]</annotation></semantics></math>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>)?
+</p>
+<h2 xml:lang="en">
+Input specification
+</h2>
+<p xml:lang="en">
+The first line contains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>,
+the number of test cases. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+lines follow with the numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mi>…</mi><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">N_k ~~ (k=1\ldots T)</annotation></semantics></math>.
+</p>
+<h2 xml:lang="en">
+Output specification
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+lines with the requested numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mi>…</mi><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Y_k~~(k=1\ldots T)</annotation></semantics></math>.
+</p>
+<h2 xml:lang="en">
+Constraints
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>N</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le N_k \le 1\_000\_000\_000\_000\_000</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="en">
+Sample input <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">8
+10000
+100000
+1000000
+10000000
+100000000
+1000000000
+10000000000
+100000000000
+</pre>
+<h2 xml:lang="en">
+Sample output <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">2
+9
+33
+105
+316
+900
+2482
+6762
+</pre>
+</div>

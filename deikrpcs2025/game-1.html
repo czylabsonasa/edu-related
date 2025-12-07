@@ -1,0 +1,207 @@
+<style>
+  .main-content {
+    display: none;
+  }
+  #hu:checked ~ .main-content[data-lang=hu] {
+    display: block;
+  }
+  #en:checked ~ .main-content[data-lang=en] {
+    display: block;
+  }
+</style>
+<hr>
+<input type="radio" name="lang" id="hu" checked/>
+<label for="hu">HU</label> <input type="radio" name="lang" id="en" />
+<label for="en">EN</label>
+<hr>
+<div class="main-content" data-lang="hu">
+<h1 xml:lang="hu">
+game-1
+</h1>
+<p xml:lang="hu">
+Egy online platformon van
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+játék, tudjuk mennyibe kerülnek
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>1</mn></msub><mspace width="0.222em"></mspace><mi>…</mi><mspace width="0.222em"></mspace><msub><mi>p</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">p_1~ \ldots ~ p_N</annotation></semantics></math>.
+Van még
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+barát ezen a platformon, akikről tudjuk hogy mennyi pénz van az (online)
+pénztárcájában
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>v</mi><mi>k</mi></msub><annotation encoding="application/x-tex">v_k</annotation></semantics></math>)
+és hogy mely játékok vannak meg neki
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mn>1</mn></msub><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>…</mi><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>g</mi><msub><mi>a</mi><mi>k</mi></msub></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>k</mi></msub><mo>≥</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g_1,~~\ldots,~~g_{a_k}~~(a_k\ge 0)</annotation></semantics></math>.
+A társaság szeretne ugyanazzal a játékkal egyszerre játszani. Pénzt nem
+lehet ajándékozni, de játékot igen és akármennyit. Minden egyes játék
+esetén kíváncsiak vagyunk arra hogy minimálisan a mekkora pénzkiadással
+járna ha együtt akarnának játszani vele. Készítsünk erről kimutatást
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>s</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">s_1,\ldots,s_N</annotation></semantics></math>)!
+</p>
+<h2 xml:lang="hu">
+Bemenet specifikáció
+</h2>
+<p xml:lang="hu">
+Első sor az esetek
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+számát tartalmazza. Egy eset leírása: Első sorban az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>M</mi></mrow><annotation encoding="application/x-tex">N~~ M</annotation></semantics></math>
+a játékok és barátok száma. A következő sorban a játékok árai vannak:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>1</mn></msub><mspace width="0.222em"></mspace><mi>…</mi><mspace width="0.222em"></mspace><msub><mi>p</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">p_1~ \ldots ~ p_N</annotation></semantics></math>.
+A következő
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+sorban pedig a fent leírt
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>g</mi><mn>1</mn></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>…</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>g</mi><msub><mi>a</mi><mi>k</mi></msub></msub></mrow><annotation encoding="application/x-tex">v_k~~ g_1~~ \ldots ~~ g_{a_k}</annotation></semantics></math>
+számok vannak
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(k=1,\ldots,M)</annotation></semantics></math>.
+</p>
+<h2 xml:lang="hu">
+Kimenet specifikáció
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+sor, melyek mindegyike az adott eset
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>1</mn></msub><mspace width="0.222em"></mspace><mi>…</mi><mspace width="0.222em"></mspace><msub><mi>s</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">s_1 ~ \ldots ~ s_N</annotation></semantics></math>
+számait tartalmazza. Ha nem lehetséges az adott játékot mindenki számára
+megszerezni írjunk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>-et
+ki.
+</p>
+<h2 xml:lang="hu">
+Korlátok
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>10</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le N \le 10\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>M</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le M \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>p</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le p_k \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>v</mi><mi>k</mi></msub><mo>≤</mo><mn>10</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">0\le v_k \le 10\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>a</mi><mi>k</mi></msub><mo>≤</mo><mn>10</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">0\le a_k \le 10\_000</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa bemenet
+</h2>
+<pre class="download" xml:lang="hu">4
+4 3
+15 8 20 25
+0 1 2
+15 3 4
+10 1
+4 3
+22 22 22 22
+0 1 2 3 4
+0 1 2 3
+0 1 2
+4 3
+22 22 22 22
+44 1 2 3 4
+0 1 2 3
+0 1 2
+4 4
+22 22 22 22
+44 1 2 3 4
+0 1 2 3
+0 1 2
+22
+</pre>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa kimenet
+</h2>
+<pre class="download" xml:lang="hu">15 16 -1 -1
+0 0 -1 -1
+0 0 22 44
+22 22 44 66
+</pre>
+</div>
+<div class="main-content" data-lang="en">
+<h1 xml:lang="en">
+game-1
+</h1>
+<p xml:lang="en">
+There are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+games on an online platform, and we know their prices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>1</mn></msub><mspace width="0.222em"></mspace><mi>…</mi><mspace width="0.222em"></mspace><msub><mi>p</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">p_1~ \ldots ~ p_N</annotation></semantics></math>.
+There are also
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+friends on this platform, and we know how much money each has in their
+(online) wallet
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>v</mi><mi>k</mi></msub><annotation encoding="application/x-tex">v_k</annotation></semantics></math>)
+and which games they already own
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mn>1</mn></msub><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>…</mi><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>g</mi><msub><mi>a</mi><mi>k</mi></msub></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>k</mi></msub><mo>≥</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g_1,~~\ldots,~~g_{a_k}~~(a_k\ge 0)</annotation></semantics></math>.
+The group wants to play the same game together. Money cannot be gifted,
+but games can be - any number of them. For each game, we want to know
+the minimum total money spending required if they want to play that game
+together. Create a report of this
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>s</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">s_1,\ldots,s_N</annotation></semantics></math>!
+</p>
+<h2 xml:lang="en">
+Input specification
+</h2>
+<p xml:lang="en">
+The first line contains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>,
+the number of test cases. Description of a test case: First line:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>M</mi></mrow><annotation encoding="application/x-tex">N~~ M</annotation></semantics></math>
+(number of games and friends). Next line: game prices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>1</mn></msub><mspace width="0.222em"></mspace><mi>…</mi><mspace width="0.222em"></mspace><msub><mi>p</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">p_1~ \ldots ~ p_N</annotation></semantics></math>.
+Next
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+lines: the numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>g</mi><mn>1</mn></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>…</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>g</mi><msub><mi>a</mi><mi>k</mi></msub></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v_k~~ g_1~~ \ldots ~~g_{a_k}~~~~(k=1,\ldots,M)</annotation></semantics></math>.
+</p>
+<h2 xml:lang="en">
+Output specification
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+lines, each containing the numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>1</mn></msub><mspace width="0.222em"></mspace><mi>…</mi><mspace width="0.222em"></mspace><msub><mi>s</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">s_1 ~ \ldots ~ s_N</annotation></semantics></math>
+for that test case. If it’s not possible for everyone to get a
+particular game, output
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>.
+</p>
+<h2 xml:lang="en">
+Constraints
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>10</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le N \le 10\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>M</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le M \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>p</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le p_k \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>v</mi><mi>k</mi></msub><mo>≤</mo><mn>10</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">0\le v_k \le 10\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>a</mi><mi>k</mi></msub><mo>≤</mo><mn>10</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">0\le a_k \le 10\_000</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="en">
+Sample input <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">4
+4 3
+15 8 20 25
+0 1 2
+15 3 4
+10 1
+4 3
+22 22 22 22
+0 1 2 3 4
+0 1 2 3
+0 1 2
+4 3
+22 22 22 22
+44 1 2 3 4
+0 1 2 3
+0 1 2
+4 4
+22 22 22 22
+44 1 2 3 4
+0 1 2 3
+0 1 2
+22
+</pre>
+<h2 xml:lang="en">
+Sample output <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">15 16 -1 -1
+0 0 -1 -1
+0 0 22 44
+22 22 44 66
+</pre>
+</div>

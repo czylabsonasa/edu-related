@@ -1,0 +1,217 @@
+<style>
+  .main-content {
+    display: none;
+  }
+  #hu:checked ~ .main-content[data-lang=hu] {
+    display: block;
+  }
+  #en:checked ~ .main-content[data-lang=en] {
+    display: block;
+  }
+</style>
+<hr>
+<input type="radio" name="lang" id="hu" checked/>
+<label for="hu">HU</label> <input type="radio" name="lang" id="en" />
+<label for="en">EN</label>
+<hr>
+<div class="main-content" data-lang="hu">
+<h1 xml:lang="hu">
+exam-1
+</h1>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+kérdés van egy vizsgán, minden kérdésre az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">A,B,C,D</annotation></semantics></math>
+válaszlehetőséggel. Adottak a helyes válaszok
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><msub><mi>h</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>h</mi><mi>Q</mi></msub></mrow><annotation encoding="application/x-tex">H=h_1,\ldots,h_Q</annotation></semantics></math>.
+A jó válaszok
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+pontot érnek, a rossz vagy hiányzó válaszok
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>-t.
+Adottak a diákok válaszai
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>a</mi><mi>Q</mi></msub></mrow><annotation encoding="application/x-tex">a_1,\ldots,a_Q</annotation></semantics></math>.
+Néhány diáknak
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+válasza hiányzik
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>?</mi><annotation encoding="application/x-tex">?</annotation></semantics></math>-vel
+jelölve), a vizsgának mindjárt vége és mivel nincsen büntetőpont a rossz
+válaszért ezért ezekre véletlenszerűen válaszolnak. Mennyi az
+összpontszám várható értéke
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>)?
+<br /> Például ha van
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">Q=4</annotation></semantics></math>
+kérdés és
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">N=3</annotation></semantics></math>
+diák:
+<pre style="font-size: 1.3em;">
+helyes válaszok: AACD
+a diákok válaszai:
+?AAB  ⟶ 1×3/4 + 2×1/4  ⟶  várhatóan 5/4 pont
+ABAB  ⟶  1  ⟶  várhatóan 1 pont
+AA?A  ⟶  2×3/4 + 3×1/4  ⟶  várhatóan 9/4 pont
+Tehát V=18/4=9/2 pont a várható összpontszám.
+</pre>
+</p>
+<h2 xml:lang="hu">
+Bemenet specifikáció
+</h2>
+<p xml:lang="hu">
+Az első sorban az esetek
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+száma. Egy eset leírása: Az első sorban
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+a kérdések száma és a diákok száma
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+szerepel. A következő sorban a helyes válaszok
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+sztringje. Ezután a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+sor következik egy-egy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+hosszú sztring. A sztringek az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>D</mi><mo>,</mo><mi>?</mi></mrow><annotation encoding="application/x-tex">A,B,C,D,?</annotation></semantics></math>
+betűket tartalmazzák, a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>?</mi><annotation encoding="application/x-tex">?</annotation></semantics></math>-et
+legfeljebb egyszer.
+</p>
+<h2 xml:lang="hu">
+Kimenet specifikáció
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+sor mindegyikben az esetnek megfelelő
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+számmal, egyszerűsített tört formában.
+</p>
+<h2 xml:lang="hu">
+Korlátok
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>Q</mi><mo>≤</mo><mn>5</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le Q \le 5\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le N \le 100</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa bemenet
+</h2>
+<pre class="download" xml:lang="hu">3
+4 3
+AACD
+?AAB
+ABAB
+AA?A
+5 3
+CCCCB
+CCCCB
+?CCCA
+CCAC?
+4 3
+AACD
+AAAB
+ABAB
+AAAA
+
+</pre>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa kimenet
+</h2>
+<pre class="download" xml:lang="hu">9/2
+23/2
+5/1
+</pre>
+</div>
+<div class="main-content" data-lang="en">
+<h1 xml:lang="en">
+exam-1
+</h1>
+<p xml:lang="en">
+There are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+questions on an exam, each with answer choices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">A, B, C, D</annotation></semantics></math>.
+The correct answers are given as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><msub><mi>h</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>h</mi><mi>Q</mi></msub></mrow><annotation encoding="application/x-tex">H = h_1,\ldots,h_Q</annotation></semantics></math>.
+Correct answers are worth 1 point, wrong or missing answers are worth 0
+points. Students’ answers are given as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>a</mi><mi>Q</mi></msub></mrow><annotation encoding="application/x-tex">a_1,\ldots,a_Q</annotation></semantics></math>.
+Some students have missing answers (denoted by ‘?’), and since the exam
+is about to end and there’s no penalty for wrong answers, they will
+answer these randomly. What is the expected value of the total score
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>)?
+<br /> For example, if there are Q=4 questions and N=3 students:
+<pre style="font-size: 1.3em;">
+Correct answers: AACD
+Student answers:
+?AAB  ⟶  1×3/4 + 2×1/4  ⟶  expected 5/4 points
+ABAB  ⟶  1  ⟶  expected 1 point
+AA?A  ⟶  2×3/4 + 3×1/4  ⟶  expected 9/4 points
+Thus V = 18/4 = 9/2 points is the expected total score.
+</pre>
+</p>
+<h2 xml:lang="en">
+Input specification
+</h2>
+<p xml:lang="en">
+The first line contains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>,
+the number of test cases. Description of each test case: First line:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+(number of questions) and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+(number of students). Next line: string
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+of correct answers. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+lines follow, each containing a string of length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>.
+The strings contain letters
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">A, B, C, D</annotation></semantics></math>
+and ‘?’ (at most one ‘?’ per string).
+</p>
+<h2 xml:lang="en">
+Output specification
+</h2>
+<p xml:lang="en">
+Output
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+lines, each containing the corresponding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+for the test case, as a simplified fraction.
+</p>
+<h2 xml:lang="en">
+Constraints
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>Q</mi><mo>≤</mo><mn>5</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le Q \le 5\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le N \le 100</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="en">
+Sample input <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">3
+4 3
+AACD
+?AAB
+ABAB
+AA?A
+5 3
+CCCCB
+CCCCB
+?CCCA
+CCAC?
+4 3
+AACD
+AAAB
+ABAB
+AAAA
+
+</pre>
+<h2 xml:lang="en">
+Sample output <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">9/2
+23/2
+5/1
+</pre>
+</div>

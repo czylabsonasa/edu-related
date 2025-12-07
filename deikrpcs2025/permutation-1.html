@@ -1,0 +1,221 @@
+<style>
+  .main-content {
+    display: none;
+  }
+  #hu:checked ~ .main-content[data-lang=hu] {
+    display: block;
+  }
+  #en:checked ~ .main-content[data-lang=en] {
+    display: block;
+  }
+</style>
+<hr>
+<input type="radio" name="lang" id="hu" checked/>
+<label for="hu">HU</label> <input type="radio" name="lang" id="en" />
+<label for="en">EN</label>
+<hr>
+<div class="main-content" data-lang="hu">
+<h1 xml:lang="hu">
+permutation-1
+</h1>
+<p xml:lang="hu">
+<p>Van
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+feladat melyek az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">1,\ldots,N</annotation></semantics></math>
+számokkal vannak jelölve. Bizonyos feladatpárokról
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub><msub><mi>b</mi><mi>k</mi></msub><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">a_k b_k,~~k=1,\ldots,M</annotation></semantics></math>)
+tudjuk hogy az egyiket
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>k</mi></msub><annotation encoding="application/x-tex">a_k</annotation></semantics></math>)
+mindenképpen el kell végeznünk mielőtt belekezünk a másikba
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>k</mi></msub><annotation encoding="application/x-tex">b_k</annotation></semantics></math>).
+Az adott feltételeket kielégítő sorrendeket lexikografikus sorrendben
+elképzelve, keressük a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>-adikat.
+Például legyen
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">N=4</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">M=3</annotation></semantics></math>
+és
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mn>2</mn><mo>,</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">K=2,4</annotation></semantics></math></p>
+<pre style="font-size: 1.3em;">
+Az adott sorrendek:
+4 1
+4 2
+2 3
+
+Ekkor az összes lehetséges elrendezés lexikografikus sorrendbe rakva:
+
+4 1 2 3
+4 2 1 3
+4 2 3 1
+
+Látható, hogy a 4 2 1 3 a második és az világos is hogy nincsen negyedik a megfelelő sorrendek közt.
+</pre>
+</p>
+<h2 xml:lang="hu">
+Bemenet specifikáció
+</h2>
+<p xml:lang="hu">
+Az első sorban
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+az esetek száma. Ezután
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+eset következik. Egy eset leírása: Az első sorban három szám:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>M</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>K</mi></mrow><annotation encoding="application/x-tex">N~~ M~~ K</annotation></semantics></math>.
+A következő
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+sorban az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub><msub><mi>b</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">a_k b_k~~(k=1,\ldots,M)</annotation></semantics></math>
+számok vannak. Egy számpár legfeljebb egyszer szerepel a listában.
+</p>
+<h2 xml:lang="hu">
+Kimenet specifikáció
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+lines, each containing the requested permutation or “-1”.
+</p>
+<h2 xml:lang="hu">
+Korlátok
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le N \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>M</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">0\le M \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>K</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le K \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>a</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le a_k \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>b</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le b_k \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub><mo>≠</mo><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">a_k\neq b_k</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>a</mi><mi>k</mi></msub><mo>,</mo><msub><mi>b</mi><mi>k</mi></msub><mo>≤</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">1\le a_k,b_k \le N</annotation></semantics></math>
+</p>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa bemenet
+</h2>
+<pre class="download" xml:lang="hu">4
+4 3 1
+2 1
+3 4
+2 4
+4 3 4
+2 1
+3 4
+2 4
+4 3 8
+2 1
+3 4
+2 4
+4 4 5
+1 2
+2 3
+3 4
+4 2
+</pre>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa kimenet
+</h2>
+<pre class="download" xml:lang="hu">2 1 3 4
+3 2 1 4
+-1
+-1
+</pre>
+</div>
+<div class="main-content" data-lang="en">
+<h1 xml:lang="en">
+permutation-1
+</h1>
+<p xml:lang="en">
+<p>We have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+tasks labeled with numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">1,\ldots,N</annotation></semantics></math>.
+For certain task pairs
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub><msub><mi>b</mi><mi>k</mi></msub><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">a_k b_k,~~k=1,\ldots,M</annotation></semantics></math>),
+we know that one task
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>k</mi></msub><annotation encoding="application/x-tex">a_k</annotation></semantics></math>)
+must be completed before we start the other
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>k</mi></msub><annotation encoding="application/x-tex">b_k</annotation></semantics></math>).
+Considering all valid orderings satisfying the given conditions in
+lexicographic order, find the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>-th
+ordering. For example, let N=4, M=3, and K=2,4:</p>
+<pre style="font-size: 1.3em;">
+The given orders:
+4 1
+4 2
+2 3
+
+Then all possible orderings in lexicographic order:
+
+4 1 2 3
+4 2 1 3
+4 2 3 1
+
+We can see that 4 2 1 3 is the second, and also clear that there is no fourth valid ordering.
+</pre>
+</p>
+<h2 xml:lang="en">
+Input specification
+</h2>
+<p xml:lang="en">
+The first line contains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>,
+the number of test cases. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+test cases follow. Description of a test case: First line: three numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>M</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>K</mi></mrow><annotation encoding="application/x-tex">N~~ M~~ K</annotation></semantics></math>.
+Next
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+lines: numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub><msub><mi>b</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">a_k b_k~~(k=1,\ldots,M)</annotation></semantics></math>.
+Each pair appears at most once in the list.
+</p>
+<h2 xml:lang="en">
+Output specification
+</h2>
+<p xml:lang="en">
+T lines with the…
+</p>
+<h2 xml:lang="en">
+Constraints
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le N \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>M</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">0\le M \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>K</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le K \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>a</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le a_k \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>b</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le b_k \le 1\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub><mo>≠</mo><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">a_k\neq b_k</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>a</mi><mi>k</mi></msub><mo>,</mo><msub><mi>b</mi><mi>k</mi></msub><mo>≤</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">1\le a_k,b_k \le N</annotation></semantics></math>
+</p>
+<h2 xml:lang="en">
+Sample input <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">4
+4 3 1
+2 1
+3 4
+2 4
+4 3 4
+2 1
+3 4
+2 4
+4 3 8
+2 1
+3 4
+2 4
+4 4 5
+1 2
+2 3
+3 4
+4 2
+</pre>
+<h2 xml:lang="en">
+Sample output <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">2 1 3 4
+3 2 1 4
+-1
+-1
+</pre>
+</div>

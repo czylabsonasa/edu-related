@@ -1,0 +1,225 @@
+<style>
+  .main-content {
+    display: none;
+  }
+  #hu:checked ~ .main-content[data-lang=hu] {
+    display: block;
+  }
+  #en:checked ~ .main-content[data-lang=en] {
+    display: block;
+  }
+</style>
+<hr>
+<input type="radio" name="lang" id="hu" checked/>
+<label for="hu">HU</label> <input type="radio" name="lang" id="en" />
+<label for="en">EN</label>
+<hr>
+<div class="main-content" data-lang="hu">
+<h1 xml:lang="hu">
+lattice-2
+</h1>
+<p xml:lang="hu">
+Van
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+locsoló a kertben. A locsolók koordinátáikkal adottak
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>,</mo><msub><mi>y</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">x_k,y_k~~k=1,\ldots,N</annotation></semantics></math>).
+Adott még ezenkívül minden locsoló esetén a belocsolt táv
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">r_k~~k=1,\ldots,N</annotation></semantics></math>).
+Ezt úgy kell érteni, hogy egy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math>
+ban levő és
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+sugarú locsoló minden olyan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X,Y</annotation></semantics></math>
+pontot elér a kertben melyre
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>a</mi><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo>−</mo><mi>X</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>y</mi><mo>−</mo><mi>Y</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">max(|x-X|,|y-Y|)\le r</annotation></semantics></math>.
+Például egy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>7</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,7)</annotation></semantics></math>-ban
+levő és
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">r=3</annotation></semantics></math>
+sugarú locsoló eléri a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mo>−</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>×</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>4</mn><mo>,</mo><mn>10</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">[-2,4]\times [4,10]</annotation></semantics></math>
+téglalap összes pontját. Mekkora a belocsolt terület
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>)?
+</p>
+<h2 xml:lang="hu">
+Bemenet specifikáció
+</h2>
+<p xml:lang="hu">
+Az első sorban
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+- az esetek száma. Ezután
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+eset leírása következik. Egy eset első sorában van a locsolók
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+száma, majd
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+sor következik az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>y</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>r</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x_k~~ y_k~~ r_k~~(k=1,\ldots,N)</annotation></semantics></math>
+számokkal. Feltehető hogy nincsen két locsoló ugyanazon a helyen és és
+nincsen olyan pont a kertben melyet <strong>5</strong>-nél több locsoló
+is elér.
+</p>
+<h2 xml:lang="hu">
+Kimenet specifikáció
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+sor, mindegyikben a keresett
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+szám.
+</p>
+<h2 xml:lang="hu">
+Korlátok
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>22</mn></mrow><annotation encoding="application/x-tex">1\le N \le 22</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mo>≤</mo><msub><mi>x</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">-1\_000\_000\le x_k \le 1\_000\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mo>≤</mo><msub><mi>y</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">-1\_000\_000\le y_k \le 1\_000\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>r</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le r_k \le 1\_000\_000</annotation></semantics></math><br />
+Részpont szerezhető a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1000</mn><mo>≤</mo><msub><mi>x</mi><mi>k</mi></msub><mo>,</mo><msub><mi>y</mi><mi>k</mi></msub><mo>,</mo><msub><mi>r</mi><mi>k</mi></msub><mo>≤</mo><mn>1000</mn><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">-1000\le x_k,y_k,r_k\le 1000~~~(k=1,\ldots,N)</annotation></semantics></math>
+korlátokkal rendelkező feladat-példányok megoldására.
+</p>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa bemenet
+</h2>
+<pre class="download" xml:lang="hu">6
+1
+0 0 1
+2
+0 0 1
+10 0 1
+3
+0 0 1
+10 0 1
+100 0 1
+5
+0 0 1
+0 0 2
+0 0 3
+0 0 4
+0 0 5
+2
+0 0 2
+1 1 2
+3
+0 0 5
+5 -2 3
+5 2 3
+</pre>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa kimenet
+</h2>
+<pre class="download" xml:lang="hu">4
+8
+12
+100
+23
+130
+</pre>
+</div>
+<div class="main-content" data-lang="en">
+<h1 xml:lang="en">
+lattice-2
+</h1>
+<p xml:lang="en">
+There are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+sprinklers in the garden. The sprinklers are given by their coordinates
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>,</mo><msub><mi>y</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">x_k,y_k~~k=1,\ldots,N</annotation></semantics></math>).
+Additionally, for each sprinkler, the watering distance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mi>k</mi></msub><annotation encoding="application/x-tex">r_k</annotation></semantics></math>
+is given
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">k=1,\ldots,N</annotation></semantics></math>).
+This should be understood as: a sprinkler at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x, y)</annotation></semantics></math>
+with radius
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+reaches every point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X, Y)</annotation></semantics></math>
+in the garden such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>a</mi><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo>−</mo><mi>X</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>y</mi><mo>−</mo><mi>Y</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">max(|x − X|, |y − Y|) ≤ r</annotation></semantics></math>.
+For example, a sprinkler at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>7</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1, 7)</annotation></semantics></math>
+with r=3 reaches all points in the rectangle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mo>−</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>×</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>4</mn><mo>,</mo><mn>10</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">[−2, 4] × [4, 10]</annotation></semantics></math>.
+What is the total watered area
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>)?
+</p>
+<h2 xml:lang="en">
+Input specification
+</h2>
+<p xml:lang="en">
+The first line contains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+- the number of test cases. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+test case descriptions follow. For each test case: First line:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+the number of sprinklers. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+lines follow, each containing three numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>y</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>r</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x_k~~ y_k~~ r_k~~(k=1,\ldots,N)</annotation></semantics></math>.
+</p>
+<h2 xml:lang="en">
+Output specification
+</h2>
+<p xml:lang="en">
+Output
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+lines, each containing the requested area
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.
+</p>
+<h2 xml:lang="en">
+Constraints
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>22</mn></mrow><annotation encoding="application/x-tex">1\le N \le 22</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mo>≤</mo><msub><mi>x</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">-1\_000\_000\le x_k \le 1\_000\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mo>≤</mo><msub><mi>y</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">-1\_000\_000\le y_k \le 1\_000\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>r</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le r_k \le 1\_000\_000</annotation></semantics></math><br />
+Partial points can be earned by solving problem instances with
+constraints
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1000</mn><mo>≤</mo><msub><mi>x</mi><mi>k</mi></msub><mo>,</mo><msub><mi>y</mi><mi>k</mi></msub><mo>,</mo><msub><mi>r</mi><mi>k</mi></msub><mo>≤</mo><mn>1000</mn><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">−1000 ≤ x_k, y_k, r_k ≤ 1000~~~(k=1,\ldots,N)</annotation></semantics></math>.
+</p>
+<h2 xml:lang="en">
+Sample input <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">6
+1
+0 0 1
+2
+0 0 1
+10 0 1
+3
+0 0 1
+10 0 1
+100 0 1
+5
+0 0 1
+0 0 2
+0 0 3
+0 0 4
+0 0 5
+2
+0 0 2
+1 1 2
+3
+0 0 5
+5 -2 3
+5 2 3
+</pre>
+<h2 xml:lang="en">
+Sample output <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">4
+8
+12
+100
+23
+130
+</pre>
+</div>

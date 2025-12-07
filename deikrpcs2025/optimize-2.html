@@ -1,0 +1,193 @@
+<style>
+  .main-content {
+    display: none;
+  }
+  #hu:checked ~ .main-content[data-lang=hu] {
+    display: block;
+  }
+  #en:checked ~ .main-content[data-lang=en] {
+    display: block;
+  }
+</style>
+<hr>
+<input type="radio" name="lang" id="hu" checked/>
+<label for="hu">HU</label> <input type="radio" name="lang" id="en" />
+<label for="en">EN</label>
+<hr>
+<div class="main-content" data-lang="hu">
+<h1 xml:lang="hu">
+optimize-2
+</h1>
+<p xml:lang="hu">
+Egy reszvény árfolyamát a következő függvénnyel modellezzük:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>A</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>B</mi><mn>1</mn></msub><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mi>…</mi><mo>+</mo><msub><mi>A</mi><mi>N</mi></msub><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>B</mi><mi>N</mi></msub><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)=A_1|B_1-x| + \ldots + A_N|B_N-x|</annotation></semantics></math>
+Most az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x=1</annotation></semantics></math>
+időpontban vagyunk. Arra vagyunk kíváncsiak hogy adott
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>,</mo><mi>M</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[1,M]</annotation></semantics></math>
+időintervallum esetén mekkora a legnagyobb nyereség
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>)
+amit el tudunk érni egy részvény vásárlásával majd eladásával. Bármilyen
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>y</mi><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">1\le x \le y\le M</annotation></semantics></math>
+időpontokat használhatunk a vásárlásra
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>)
+illetve eladásra
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>).
+Ha nem vásárlunk/adunk el semmit akkor a hasznunk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+természetesen.
+</p>
+<h2 xml:lang="hu">
+Bemenet specifikáció
+</h2>
+<p xml:lang="hu">
+Minden adat <em>egész</em> szám. Az első sorban van
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+az esetek száma. Egy eset leírása: Az első sor az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-et
+és az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>-et
+tartalmazza. A következő sorban az
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>A</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">A_1,\ldots,A_N</annotation></semantics></math>
+mennyiségek. A harmadikban pedig a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>B</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">B_1,\ldots,B_N</annotation></semantics></math>
+mennyiségek, melyek <em>különböző</em> értékek.
+</p>
+<h2 xml:lang="hu">
+Kimenet specifikáció
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+sor, mindegyikben a keresett
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+szám.
+</p>
+<h2 xml:lang="hu">
+Korlátok
+</h2>
+<p xml:lang="hu">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le N \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>M</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le M \le 1\_000\_000\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>A</mi><mi>k</mi></msub><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le A_k \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>B</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le B_k \le 1\_000\_000\_000</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa bemenet
+</h2>
+<pre class="download" xml:lang="hu">5
+4 10
+1 2 3 4
+1 2 3 4
+9 10
+1 2 3 1 2 3 1 2 3
+1 2 4 8 16 32 64 128 256
+9 50
+1 2 3 1 2 3 1 2 3
+1 2 4 8 16 32 64 128 256
+9 100
+1 2 3 1 2 3 1 2 3
+1 2 4 8 16 32 64 128 256
+9 300
+1 2 3 1 2 3 1 2 3
+1 2 4 8 16 32 64 128 256
+</pre>
+<h2 xml:lang="hu">
+<strong>1.</strong> példa kimenet
+</h2>
+<pre class="download" xml:lang="hu">62
+0
+108
+480
+3032
+</pre>
+</div>
+<div class="main-content" data-lang="en">
+<h1 xml:lang="en">
+optimize-2
+</h1>
+<p xml:lang="en">
+<p>We model a stock price with the following function:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>A</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>B</mi><mn>1</mn></msub><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mi>…</mi><mo>+</mo><msub><mi>A</mi><mi>N</mi></msub><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>B</mi><mi>N</mi></msub><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)=A_1|B_1-x| + \ldots + A_N|B_N-x|</annotation></semantics></math>
+Currently we are at time
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x=1</annotation></semantics></math>.
+We want to know: given a time interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>,</mo><mi>M</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[1,M]</annotation></semantics></math>,
+what is the maximum profit
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>)
+we can achieve by buying and then selling the stock. We can use any
+times
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>y</mi><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">1 ≤ x ≤ y ≤ M</annotation></semantics></math>
+for buying
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>)
+and selling
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>).
+If we don’t buy/sell anything, our profit is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+of course.</p>
+</p>
+<h2 xml:lang="en">
+Input specification
+</h2>
+<p xml:lang="en">
+All data are integers. In the first line comes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+the number of test cases. Description of each test case: First line
+contains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>.
+Next line contains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>A</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">A_1,\ldots,A_N</annotation></semantics></math>.
+Third line contains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>B</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">B_1,\ldots,B_N</annotation></semantics></math>,
+which are <em>distinct</em> values.
+</p>
+<h2 xml:lang="en">
+Output specification
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+lines, each containing the requested number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>.
+</p>
+<h2 xml:lang="en">
+Constraints
+</h2>
+<p xml:lang="en">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le T \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le N \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>M</mi><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le M \le 1\_000\_000\_000</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>A</mi><mi>k</mi></msub><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1\le A_k \le 100</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>B</mi><mi>k</mi></msub><mo>≤</mo><mn>1</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn><mi>_</mi><mn>000</mn></mrow><annotation encoding="application/x-tex">1\le B_k \le 1\_000\_000\_000</annotation></semantics></math><br />
+</p>
+<h2 xml:lang="en">
+Sample input <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">5
+4 10
+1 2 3 4
+1 2 3 4
+9 10
+1 2 3 1 2 3 1 2 3
+1 2 4 8 16 32 64 128 256
+9 50
+1 2 3 1 2 3 1 2 3
+1 2 4 8 16 32 64 128 256
+9 100
+1 2 3 1 2 3 1 2 3
+1 2 4 8 16 32 64 128 256
+9 300
+1 2 3 1 2 3 1 2 3
+1 2 4 8 16 32 64 128 256
+</pre>
+<h2 xml:lang="en">
+Sample output <strong>1</strong>
+</h2>
+<pre class="download" xml:lang="en">62
+0
+108
+480
+3032
+</pre>
+</div>
