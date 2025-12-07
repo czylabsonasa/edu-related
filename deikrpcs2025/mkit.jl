@@ -1,6 +1,6 @@
 #!/home/nosy/.juliaup/bin/julia
 
-run(`pandoc --mathml index.md -o index.html`)
+run(`pandoc --mathml readme.md -o index.html`)
 rm("stuff.tgz"; force=true)
 dname=basename(pwd())
 cd("..")
