@@ -10,7 +10,7 @@
     - assuming that no more than 30 steps required the upper bound for the complexity of one case (both memory and time) is $30*10^5$.
 
 - [io](digits-3.tgz)
-- [html](https://htmlpreview.github.io/?url=digits-3.html)
+- [html](https://htmlpreview.github.io/?url=https://github.com/czylabsonasa/edu-related/blob/master/deikrpcs2025/digits-3.html)
 
 
 <hr>
@@ -26,7 +26,7 @@
   - finding a left neighbour is similar: find the rightmost digit that *can be decreased*
     - for $99$ there is no left friend
 - [io](digits-1.tgz)
-- [html](digits-1.html)
+- [html](https://htmlpreview.github.io/?url=https://github.com/czylabsonasa/edu-related/blob/master/deikrpcs2025/digits-1.html)
 
 <hr>
 
