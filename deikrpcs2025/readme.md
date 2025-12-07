@@ -1,10 +1,8 @@
 ## deik-rpcs 2025 editorial
 
-
 ### info
 - on github html it is not rendered and i'm not interested to learn how could it be done
-- instead here is to the [zipped stuff](stuff.tgz)
-  - it works fine locally (tested only on linux)
+- the [zipped stuff](stuff.tgz) works fine locally (tested only on linux)
 
 
 
@@ -26,7 +24,7 @@
 ###  digits-1
 - searching for closest same digit-sum number.
 - the brute-force "Loop until you find it" approach is ok for small numbers.
-- for $1\_000\_000\_000$ the next number is $10\_000\_000\_000$, which is $O(10^{9})$ steps away $\longrightarrow$ TLE
+- for $1\_000\_000\_000$ the next number is $10\_000\_000\_000$, which is $\mathcal{O}(10^{9})$ steps away $\longrightarrow$ TLE
 - an $\mathcal{O}(\text{number of digits})$ approach similar to the **next permutation** algo can be used: 
   - for right neighbour: search for the rightmost (weakest) digit that can be increased by 1. The *can be increased* means it is smaller than 9 and there is a positive digit to its right:
     - $890\_000\_ 000 ~~\longrightarrow~~ 900\_000\_008$
@@ -64,10 +62,10 @@
 - evaluate it at points of $L,R$
 - if $\frac{-b}{2a} \in [L,R]$ then, eval $f$ at it and adjust the $min/max$ appropriately 
 - $\mathcal{O}(Q+N)$
-- it seems trivial, but it is not about evaluate $f$ at integer points (and it would too slow)
+- it seems trivial, but it is more than just evaluate $f$ at integer points (and it would too slow)
   - consider $20x^2-10x+10$ on $[-1,1]$ it has a minimizer at $0.25$ and the value is 
   $8.75$. $f(\{-1,0,1\})=\{40,10,20\}$, so somewhere on the interval $f$ has a value of $9$.
-  - $f$ is continous!!! Bolzano IVT...
+  - $f$ is continous + Bolzano IVT...
 - [io](optimize-1.tgz)
 - [html](optimize-1.html)
 
@@ -78,9 +76,8 @@
 - $f$ is a piecewise linear function whose breakpoints at $B_k$-s. (and they are different)
 - we need its values only at ${1, B_1,\ldots, B_N, M}$
 - a single sweep through the values needed to get the maximal profit.
-- $\mathcal{O}(N^2) with naive function evaluation:
-$N$ operations per location
-- it can be lowered to $\mathcal{O}(N)$, but we do not need it
+- time: $\mathcal{O}(N^2)$ with naive function evaluation, $N$ operations per location
+- it can be lowered to $\mathcal{O}(N)$, but we do not need it to get passed
 - [io](optimize-2.tgz)
 - [html](optimize-2.html)
 
@@ -111,8 +108,10 @@ $N$ operations per location
 
 ### escape-1
 - *BFS* with restrictions
-- the many bfs will get TLE (probably)
-- we need only one BFS but in a reversed way
+- the many bfs (starting from each free inner locations) will get TLE (probably)
+- we need only one BFS but in a reversed way: in the original you can step into a cell containing '<' only from right (with a left step)
+in the reversed you can step out from a cell containing '<' only to the right. so, by you changing each sign to its reverse, you will see the 
+only direction that can be used to leave the cell. Execute this reversed BFS from the border cells at once.
 - [io](escape-1.tgz)
 - [html](escape-1.html)
 <hr>
@@ -131,7 +130,7 @@ $N$ operations per location
 ### primes-1
 $a^6<ab^2c^3\le N$<br>
 $2b^5<ab^2c^3\le N$<br>
-$2~3^2c^3<ab^2c^3\le N$
+$2~3^2c^3<ab^2c^3\le N$<br>
 - we need the primes under $(\frac{N}{2~3^2})^\frac{1}{3}$
 - brute-force nested loop approach, several aproaches are possible...
 - [io](primes-1.tgz)
@@ -143,9 +142,8 @@ $2~3^2c^3<ab^2c^3\le N$
 ### lattice-2
 
 - inclusion-exclusion principle
-- the popular iterative implementation will TLE
-  - pruning is possible
-- or one can use the at "most 5" bound and generate all combinations.
+- the popular iterative implementation will TLE, but with pruning (break the loop if the actual intersection is empty) can pass
+- one can use the at "most 5" bound and generate all combinations.
 - the recursive approach with pruning is fast within the given bounds
 - $\mathcal{O}(5*binomial(N,5))$
 - [io](lattice-2.tgz)
