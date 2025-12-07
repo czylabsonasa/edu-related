@@ -10,7 +10,7 @@
     - assuming that no more than 30 steps required the upper bound for the complexity of one case (both memory and time) is $30*10^5$.
 
 - [io](digits-3.tgz)
-- [html](digits-3.html)
+- [html](https://htmlpreview.github.io/?url=digits-3.html)
 
 
 <hr>
