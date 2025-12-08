@@ -11,6 +11,8 @@
 - [lab-7](lab-7/readme.md)
 - [lab-8](lab-8/readme.md)
 - [lab-9](lab-9/readme.md)
+- [lab-10](lab-10/readme.md)
+- [lab-11](lab-11/readme.md)
 
 
 
